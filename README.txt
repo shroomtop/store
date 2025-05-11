@@ -1,23 +1,5 @@
-# Shroomtop420® Store Deployment Guide
+About Us
+Welcome to Shroomtop420®, your premier destination for cutting-edge AI, automation, and digital innovation. Founded by Alex, a full-stack developer and AI prompt engineer, we specialize in creating advanced, self-contained web and mobile tools. Our focus is on delivering scalable, offline-functional digital products that leverage the power of AI and automation to streamline and enhance user experiences.
 
-## ✅ Domain
-- Domain: https://www.shroomtop420.com
-- Hosted via GitHub Pages from the `store` repo.
-
-## ✅ DNS Setup (GoDaddy)
-- A @ → 185.199.108.153
-- A @ → 185.199.109.153
-- A @ → 185.199.110.153
-- A @ → 185.199.111.153
-- CNAME www → shroomtop.github.io.
-
-## ✅ GitHub Pages Settings
-- Repo: https://github.com/shroomtop/store
-- Custom domain: www.shroomtop420.com
-- Enforce HTTPS: ✅ Enabled
-- Root of repo must contain: `CNAME` file with content `www.shroomtop420.com`
-
-## ✅ Stripe
-- Business site URL: https://www.shroomtop420.com
-- Paste this into Stripe dashboard for verification.
+At Shroomtop420®, we are committed to pushing the boundaries of technology, ensuring that every tool we create is robust, user-friendly, and ready for seamless deployment. Join us on our journey to revolutionize the digital landscape, one innovative solution at a time.
 
