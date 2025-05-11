@@ -1,0 +1,8 @@
+{
+  "name": "Shroomtop420® Store",
+  "short_name": "ShroomStore",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#6b46c1"
+}
