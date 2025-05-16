@@ -3,416 +3,241 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shroomtop420® – AI / Automation / Digital Creation</title>
-
-  <!-- Libraries -->
+  <title>Shroomtop420™ — AI, Automation & Digital Profit Studio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-  <!-- Core Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-    :root{
-      --bg-color:#1a0a2e;
-      --card-bg:rgba(26,10,46,.75);
-      --card-border-fallback:rgba(255,255,255,.1);
-      --text-color:#e0d8f0;
-      --heading-color:#fff;
-      --accent-color:#9f7aea;
-      --accent-hover:#b89cf5;
-      --shadow-color:rgba(0,0,0,.6);
-      --glow-color:var(--accent-color);
-      --rainbow-gradient:conic-gradient(from 0deg,
-        hsl(270,80%,70%),hsl(300,80%,70%),hsl(330,80%,70%),
-        hsl(0,80%,70%),hsl(30,80%,70%),hsl(60,80%,70%),
-        hsl(90,80%,70%),hsl(120,80%,70%),hsl(150,80%,70%),
-        hsl(180,80%,70%),hsl(210,80%,70%),hsl(240,80%,70%),
-        hsl(270,80%,70%));
-    }
-
-    *{margin:0;padding:0;box-sizing:border-box}
-
-    body{
-      font-family:'Poppins',sans-serif;
-      background:var(--bg-color);
-      color:var(--text-color);
+    html,body {height:100%;margin:0;padding:0;scroll-behavior:smooth;}
+    body {
+      font-family:'Montserrat',sans-serif;
+      background: radial-gradient(ellipse 160% 120% at 50% 0%, #381d6e 0%, #1a0a2e 70%);
+      color: #e0d8f0;
+      min-height: 100vh;
       overflow-x:hidden;
-      line-height:1.7;
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:flex-start;
-      padding:3vh 0 5vh;
-      position:relative;
     }
-
-    /* 3‑D BG */
-    #three-canvas-container{
-      position:fixed;top:0;left:0;width:100%;height:100%;
-      z-index:-1;background:var(--bg-color);pointer-events:none;
+    .main {max-width: 900px; margin: 2vw auto 0 auto; padding: 24px 6vw 48px 6vw; border-radius: 2rem;
+      background:rgba(26,10,46,0.93); box-shadow:0 12px 50px 0 #11052c90, 0 0 0 3px #ffffff09;
+      border: 2.5px solid rgba(255,255,255,0.09); position:relative; z-index:2;}
+    nav { z-index:2; display:flex; justify-content:center; flex-wrap:wrap; gap:6px; margin-bottom: 32px;}
+    .nav-btn { color:#b89cf5; background:rgba(255,255,255,0.08); border:none; border-radius:18px; padding:11px 18px;
+      font-weight:700; font-size:1.03rem; cursor:pointer; transition:.23s; outline:none; letter-spacing:0.01em; min-width:88px;
+      margin:1.5px 1px;}
+    .nav-btn:hover,.nav-btn.active { color:#fff; background:linear-gradient(90deg,#9f7aea 70%,#7fd9fc 120%);
+      box-shadow:0 2.5px 20px #9f7aea44;}
+    section {margin-bottom:38px;}
+    .section-title {font-size:1.42em;font-weight:900;margin-bottom:11px;color:#b89cf5;text-shadow:0 2px 15px #9f7aea33;}
+    .glass-card, .card {background:rgba(255,255,255,0.13); border-radius:1.2rem; padding:18px 12px 14px 16px;
+      box-shadow:0 4px 22px #9f7aea22; border:1.2px solid rgba(255,255,255,0.09); margin-bottom: 18px;}
+    .stripe-btn {background:linear-gradient(90deg,#9f7aea,#b89cf5 85%); color:#fff;border:none;border-radius:30px;font-size:1.1em;
+      padding:15px 26px;font-weight:800;box-shadow:0 4px 44px #9f7aea44;margin:10px 0 6px 0;cursor:pointer;transition:.18s;}
+    .stripe-btn:hover {filter:brightness(1.11) saturate(1.07);}
+    .social-links {display:flex;flex-wrap:wrap;gap:18px;margin:10px 0 7px 0;justify-content:center;}
+    .social-icon {width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;
+      border-radius:50%;background:rgba(26,10,46,0.83);box-shadow:0 1.5px 10px #9f7aea44;transition:.18s; font-size:1.37em; color:#fff; text-decoration:none;}
+    .social-icon:hover {background:linear-gradient(90deg,#7fd9fc,#9f7aea 90%);color:#fff;transform:scale(1.14);}
+    .footer-links {margin-top:36px;display:flex;justify-content:center;gap:22px;font-size:.97em;opacity:.78;}
+    .footer-link {text-decoration:underline;color:#b89cf5;cursor:pointer;transition:.13s;}
+    .footer-link:hover {color:#fff;}
+    .modal-bg {display:none;position:fixed;inset:0;background:rgba(18,7,29,0.83);z-index:90;align-items:center;justify-content:center;}
+    .modal-bg.active {display:flex;}
+    .modal {background:rgba(26,10,46,0.98);border-radius:1.1rem;padding:32px 26px 22px 26px;box-shadow:0 10px 44px #381d6e80;
+      max-width:97vw;width:420px;color:#e0d8f0;}
+    .modal .close {position:absolute;top:13px;right:24px;font-size:1.7em;cursor:pointer;color:#9f7aea;}
+    @media (max-width: 900px){.main{max-width:99vw;padding:14px 0 22vw 0; border-radius:0;}}
+    @media (max-width: 600px){
+      .main{padding:8px 0 23vw 0;}
+      .social-icon{width:34px;height:34px;}
+      .modal{padding:19px 7vw 18px 7vw;width:95vw;}
     }
-
-    /* Layout */
-    .main-container{position:relative;z-index:1;width:90%;max-width:900px;display:flex;flex-direction:column;align-items:center}
-
-    .glass-card{
-      position:relative;width:100%;margin-bottom:25px;
-      background:var(--card-bg);backdrop-filter:blur(18px)saturate(150%);
-      -webkit-backdrop-filter:blur(18px)saturate(150%);
-      border-radius:20px;padding:30px 35px;box-shadow:0 12px 45px var(--shadow-color);
-      overflow:hidden;border:1px solid transparent;text-align:center;
-    }
-    .glass-card::before,
-    .glass-card::after{
-      content:'';position:absolute;inset:0;border-radius:20px;padding:2px;
-      background:var(--rainbow-gradient);-webkit-mask:linear-gradient(#fff 0 0)content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0)content-box,linear-gradient(#fff 0 0);
-      -webkit-mask-composite:destination-out;mask-composite:exclude;z-index:-1;animation:rotate-gradient 4s linear infinite;filter:blur(4px)opacity(.9)
-    }
-    .glass-card::after{padding:1px;animation-direction:reverse}
-
-    @keyframes rotate-gradient{from{transform:rotate(0)}to{transform:rotate(360deg)}}
-
-    /* Nav */
-    nav{margin-bottom:25px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
-    nav a.nav-link{
-      color:var(--text-color);text-decoration:none;padding:8px 15px;border-radius:8px;
-      background:rgba(255,255,255,.05);transition:.3s;position:relative;overflow:hidden;z-index:1
-    }
-    nav a.nav-link::before{
-      content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
-      background:linear-gradient(90deg,rgba(255,255,255,.1),rgba(255,255,255,.2));transition:left .3s;z-index:-1
-    }
-    nav a.nav-link:hover{color:var(--heading-color);transform:translateY(-2px);box-shadow:0 4px 10px rgba(0,0,0,.3)}
-    nav a.nav-link:hover::before{left:0}
-    nav a.nav-link.active{
-      background:var(--accent-color);color:#fff;font-weight:600;box-shadow:0 2px 8px rgba(159,122,234,.4)
-    }
-    nav a.nav-link.active::before{left:100%}
-
-    /* Sections */
-    .page-section{display:none;opacity:0;transition:opacity .5s;width:100%;min-height:200px;padding-top:10px}
-    .page-section.active{display:block;opacity:1}
-    h1,h2{color:var(--heading-color);margin-bottom:15px;font-weight:700;text-shadow:0 0 12px rgba(255,255,255,.2)}
-    h1{font-size:2.2em;margin-bottom:10px}
-    h2{font-size:1.6em;font-weight:600;margin-top:25px}
-    h2:first-of-type{margin-top:0}
-    p{margin-bottom:18px;font-size:1em;font-weight:300;max-width:95%;margin-inline:auto}
-
-    /* CTA */
-    .cta-button{
-      background:linear-gradient(135deg,var(--accent-color),var(--accent-hover));
-      color:#fff;border:none;padding:14px 30px;border-radius:50px;font-size:1.1em;font-weight:600;
-      display:inline-flex;align-items:center;gap:8px;margin-top:15px;
-      box-shadow:0 4px 15px rgba(159,122,234,.3);transition:.3s;text-decoration:none;text-shadow:0 1px 2px rgba(0,0,0,.15)
-    }
-    .cta-button:hover{transform:translateY(-3px)scale(1.04);box-shadow:0 7px 22px rgba(159,122,234,.5);filter:brightness(1.1)}
-    .cta-button:active{transform:none;box-shadow:0 3px 12px rgba(159,122,234,.3)}
-    .cta-button svg{width:20px;height:20px;fill:#fff}
-
-    /* Store Cards */
-    .store-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:15px;padding:20px;margin-bottom:25px;text-align:left}
-    .store-card h3{font-size:1.25rem;color:var(--heading-color);margin-bottom:8px;font-weight:600}
-    .store-card p{margin-bottom:12px;font-size:.95rem}
-    .buy-btn{background:var(--accent-color);padding:8px 18px;border-radius:8px;font-weight:500;transition:.3s}
-    .buy-btn:hover{background:var(--accent-hover);transform:translateY(-2px)}
-
-    /* Small text helper */
-    .small-text{font-size:.85em;opacity:.7;margin-top:20px}
+    .text-glow { text-shadow:0 1px 15px #fbc2eb, 0 2px 11px #9f7aea44;}
+    .icon-bullet {margin-right:5px;vertical-align:-2px;color:#b89cf5;}
+    .skills-table {width:100%;font-size:.97em;}
+    .skills-table th,.skills-table td {padding:7px 5px;text-align:left;}
+    .skills-table th {color:#b89cf5;font-weight:800;}
+    .skills-table td {color:#e0d8f0;}
+    .skills-domain {font-weight:700;}
   </style>
 </head>
-
 <body>
-  <div id="three-canvas-container"></div>
-
-  <div class="main-container">
-    <div class="glass-card">
-      <!-- Navigation -->
-      <nav>
-        <a href="#home"    class="nav-link" data-page="home"    data-key="1">Home</a>
-        <a href="#about"   class="nav-link" data-page="about"   data-key="2">About</a>
-        <a href="#projects"class="nav-link" data-page="projects"data-key="3">Projects</a>
-        <a href="#support" class="nav-link" data-page="support" data-key="4">Support</a>
-        <a href="#connect" class="nav-link" data-page="connect" data-key="5">Connect</a>
-        <a href="#store"   class="nav-link" data-page="store"   data-key="6">Store</a> <!-- NEW -->
-      </nav>
-
-      <!-- Home -->
-      <div id="page-home" class="page-section">
-        <h1>Shroomtop420</h1>
-        <h2>AI / Automation / Digital Mastery</h2>
-        <p>Welcome. I'm Alex — a full‑stack developer and systems thinker reshaping life through code, creation, and AI.</p>
-        <p>After years of gaming and hardship, I've been sober for two years and now build GPTs, tools, and self‑improving systems designed to educate, empower, and scale efficiently.</p>
-        <a href="#projects" class="cta-button internal-nav" data-page="projects">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-1-11h2v2h-2zm0 4h2v4h-2z"/></svg>
-          Explore Projects
+  <div class="main relative z-10 pb-12 md:pb-20">
+    <nav>
+      <button class="nav-btn" onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">Home</button>
+      <button class="nav-btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</button>
+      <button class="nav-btn" onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">Skills</button>
+      <button class="nav-btn" onclick="document.getElementById('roadmap').scrollIntoView({behavior:'smooth'})">Roadmap</button>
+      <button class="nav-btn" onclick="document.getElementById('store').scrollIntoView({behavior:'smooth'})">Store</button>
+      <button class="nav-btn" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">FAQ</button>
+      <button class="nav-btn" onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'})">Connect</button>
+    </nav>
+    <!-- HOME -->
+    <section id="home">
+      <div class="section-title text-glow">Shroomtop420™</div>
+      <div class="text-xl font-bold mb-2 text-glow">AI, Automation & Monetization Lab</div>
+      <div class="glass-card text-base">
+        <span class="icon-bullet">🧬</span> Building antifragile, self-improving code products.<br>
+        <span class="icon-bullet">📱</span> Mobile-first workflow (develop & deploy from Android + Termux).<br>
+        <span class="icon-bullet">⚡</span> 100+ GPTs launched • Stripe-powered paywalls.<br>
+        <span class="icon-bullet">🛠️</span> Stacks: HTML5, ES6, Tailwind, Three-JS, Flask, GitHub, Stripe.
+      </div>
+      <a href="#store" class="stripe-btn block w-fit mx-auto mt-7 mb-1">Unlock Premium GPTs</a>
+      <div class="text-xs mt-3 text-center opacity-80">No hype. No filler. Pure digital profit engineering.</div>
+    </section>
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title">About</div>
+      <div class="glass-card mb-2">
+        <b>Philosophy:</b> Radical adaptability, zero-bullshit execution. Turned obsession + adversity into a brand that only ships code which <em>earns, scales & improves itself</em>.
+      </div>
+      <div class="glass-card">
+        <b>Story:</b> Ex-gamer, now sober engineer running a pocket-sized dev empire from a phone.
+      </div>
+    </section>
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-title">Skills Snapshot</div>
+      <div class="card mb-3">
+        <table class="skills-table">
+          <tr><th>Domain</th><th>Percentile</th><th>Highlights</th><th>Next Focus</th></tr>
+          <tr><td class="skills-domain">Prompt Engineering</td><td class="text-lime-400 font-bold">95%</td>
+            <td>170+ GPTs, meta-prompts, automation</td>
+            <td>Fine-tuning & reliability</td></tr>
+          <tr><td class="skills-domain">Frontend Dev</td><td class="text-sky-400 font-bold">90%</td>
+            <td>Zero-dep webapps, 3D/Canvas, PWA</td>
+            <td>Large-scale SPAs, a11y</td></tr>
+          <tr><td class="skills-domain">Backend/API</td><td class="text-yellow-300 font-bold">60%</td>
+            <td>Node, Flask, DB basics</td>
+            <td>Scaling & auth</td></tr>
+        </table>
+      </div>
+    </section>
+    <!-- ROADMAP -->
+    <section id="roadmap">
+      <div class="section-title">Roadmap 2025</div>
+      <div class="glass-card mb-2">
+        <b>Q2-Q3</b> • Launch full Stripe license engine, GitHub monetization layer.<br>
+        <b>Q4</b> • Profit Surface Visualizer, PWA app-suite, white-label tool line.
+      </div>
+      <div class="card">
+        <b>Upcoming Builds</b>
+        <ul class="list-disc ml-5 mt-2 text-sm">
+          <li>Prompt Licensing Toolkit v3</li>
+          <li>GPT Marketplace / Directory</li>
+          <li>Self-updating code products</li>
+        </ul>
+      </div>
+    </section>
+    <!-- STORE -->
+    <section id="store">
+      <div class="section-title">Shroomtop420™ Store</div>
+      <div class="card mb-4">
+        <div class="text-lg font-bold mb-1 text-glow">All Premium GPTs – <span class="text-sky-300">$15/mo</span></div>
+        <p class="mb-2">One subscription unlocks <b>all premium Shroomtop420™ GPTs</b> in the OpenAI GPT Store.<br>
+          <span class="opacity-80">No hype. No filler. <b>Just deploy, automate, monetize.</b></span>
+        </p>
+        <!-- Stripe Buy Button -->
+        <div class="w-full flex justify-center my-5">
+          <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+          <stripe-buy-button
+            buy-button-id="buy_btn_1RPEqmHgDm6bxqi6KGVKhawa"
+            publishable-key="pk_live_51NcN7SHgDm6bxqi6Ehu0b6BQ00WLdZ2zaVwwRo1rJPGZJM1jqxThBOwyBk7SZHH1VKHCICzo5TNTpDQal6m4G4xc00nYFcP3Aq"
+          ></stripe-buy-button>
+        </div>
+        <div class="text-xs mt-3 opacity-80 text-center">
+          Instant access: After purchase, use your email to unlock all current and future GPTs via OpenAI GPT Store.
+        </div>
+      </div>
+    </section>
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="section-title">FAQ</div>
+      <div class="card">
+        <div class="font-bold mb-2">How do I access the GPTs after subscribing?</div>
+        <div class="mb-3">After you subscribe, use your Stripe email to request unlock via the OpenAI GPT Store or contact me directly for immediate access. Email: <a href="mailto:onesilentflame@gmail.com">onesilentflame@gmail.com</a></div>
+        <div class="font-bold mb-2">What’s included in the subscription?</div>
+        <div class="mb-3">You get access to <b>all current and future Shroomtop420™ premium GPTs</b>—no need to buy separately. New tools are automatically unlocked for subscribers.</div>
+        <div class="font-bold mb-2">Where can I find support or ask for features?</div>
+        <div class="mb-3">Reach out via <a href="mailto:onesilentflame@gmail.com">email</a> or join the <a href="https://discord.gg/6U5dU5mE4C" target="_blank">Discord server</a> for real-time support and roadmap voting.</div>
+        <div class="font-bold mb-2">Is this secure and private?</div>
+        <div>All payments go through Stripe. Your data is never sold, and you can unsubscribe any time.</div>
+      </div>
+    </section>
+    <!-- CONNECT -->
+    <section id="connect">
+      <div class="section-title">Contact & Connect</div>
+      <div class="social-links mb-3">
+        <a class="social-icon" href="https://github.com/shroomtop" target="_blank" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.304 3.438 9.8 8.205 11.387.6.113.82-.263.82-.582v-2.217c-3.338.726-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.756-1.333-1.756-1.09-.746.082-.73.082-.73 1.204.085 1.838 1.243 1.838 1.243 1.072 1.837 2.81 1.306 3.495.998.108-.776.42-1.306.762-1.607-2.665-.303-5.466-1.332-5.466-5.932 0-1.311.469-2.382 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.958-.267 1.984-.399 3.003-.404 1.018.005 2.045.137 3.003.404 2.289-1.552 3.295-1.23 3.295-1.23.654 1.653.243 2.873.12 3.176.77.839 1.235 1.91 1.235 3.221 0 4.61-2.805 5.625-5.478 5.922.43.372.823 1.104.823 2.225v3.293c0 .321.216.699.825.581C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>
         </a>
-        <p class="small-text text-center mt-1">Fueling innovation through code and resilience.</p>
-      </div>
-
-      <!-- About -->
-      <div id="page-about" class="page-section">
-        <h2>About Me (@Shroomtop420)</h2>
-        <p>I'm an intensely goal‑oriented developer focused on AI, full‑stack automation, scalable monetization, and prompt engineering.</p>
-        <p><strong>Core Interests:</strong> AI & Automation, Cybersecurity & IoT, React/Vue/Solid, Prompt Engineering.</p>
-        <p><strong>Current Focus:</strong> Node + PostgreSQL, advanced AI agents, backend DevOps, and interactive front‑end experiences.</p>
-        <a href="#connect" class="nav-link internal-nav" data-page="connect" style="display:inline-block;margin-top:10px;">Find me online →</a>
-      </div>
-
-      <!-- Projects -->
-      <div id="page-projects" class="page-section">
-        <h2>Project Showcase</h2>
-        <p>Select a project to load the live GitHub Pages demo.</p>
-        <div class="project-selector flex flex-col items-center gap-2 mb-4">
-          <label for="codepen-select" class="font-semibold">Choose a Project:</label>
-          <select id="codepen-select" class="rounded px-3 py-2 bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.2)] min-w-[300px]">
-            <option value="">-- Select a Project --</option>
-          </select>
-        </div>
-        <div id="codepen-loading-message" class="text-center italic text-[var(--accent-hover)] hidden">Loading Project...</div>
-        <div id="codepen-embed-container" class="w-full h-[600px] rounded border border-[rgba(255,255,255,0.1)] flex items-center justify-center">
-          <p class="italic opacity-70">Select a project above to load the interactive embed.</p>
-        </div>
-        <p class="small-text">Some complex projects might take a moment to load.</p>
-      </div>
-
-      <!-- Support -->
-      <div id="page-support" class="page-section">
-        <h2>Fuel the Innovation Engine</h2>
-        <p>Your contribution directly enables more dev time, research, and community resources.</p>
-        <a href="https://www.buymeacoffee.com/Shroomtop420" target="_blank" rel="noopener noreferrer" class="cta-button" id="cta-support">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.5 3H6c-1.1 0-2 .9-2 2v5.71c0 3.83 2.95 7.18 6.78 7.29 3.96.12 7.22-3.06 7.22-7v-1h.5c1.93 0 3.5-1.57 3.5-3.5S20.43 3 18.5 3zM18 8h-5V5h5c.83 0 1.5.67 1.5 1.5S18.83 8 18 8zM6 5h5v3H6V5zm7.22 14.01C9.6 18.89 8 15.73 8 12.71V10h8v2c0 3.87-3.13 7-7 7 .07 0 .14 0 .22-.01z"/></svg>
-          Buy me a Coffee
+        <a class="social-icon" href="https://codepen.io/Shroomtop420" target="_blank" title="CodePen">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M22.218 7.433a.974.974 0 00-.012-.093c-.007-.03-.018-.057-.028-.086-.014-.04-.027-.08-.048-.117-.012-.022-.028-.041-.043-.061a.977.977 0 00-.08-.097l-.002-.002-.001-.001-.001-.001-.001-.001-8.669-6.03c-.337-.235-.779-.235-1.116 0l-8.67 6.03c-.001 0-.001.001-.002.001-.027.02-.052.042-.073.067-.017.02-.033.041-.048.062-.021.037-.034.077-.048.117-.01.03-.021.057-.028.087-.008.031-.013.062-.013.094v.01 9.138c.002-.017.003-.025v-9.138c0-.004-.002-.006-.002-.01zm-2.159.53-3.918 2.727-3.065-2.135V3.065l6.983 4.898zm-9.059-4.898v5.495l-3.065 2.135-3.918-2.727 6.983-4.903zm-8.013 6.142 3.681 2.563-3.681 2.564V9.207zm1.03 3.578 3.918-2.729 3.065 2.137v4.272l-6.983-4.885zm8.013 9.278-6.983-4.857 3.679-2.564 3.304 2.304v5.117zm1.001 0v-5.117l3.304-2.304 3.678 2.564-6.982 4.857zm7.012-6.096-3.681-2.564 3.681-2.563v5.127z"/></svg>
         </a>
-        <p id="ai-gratitude" class="small-text text-center mt-1 italic min-h-[1.2em]"></p>
+        <a class="social-icon" href="https://www.youtube.com/@shroomtop420" target="_blank" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M23.498 6.186a2.94 2.94 0 0 0-2.068-2.073C19.131 3.5 12 3.5 12 3.5s-7.131 0-9.431.613A2.94 2.94 0 0 0 .5 6.186 30.51 30.51 0 0 0 0 12a30.51 30.51 0 0 0 .5 5.814 2.94 2.94 0 0 0 2.069 2.073c2.3.613 9.431.613 9.431.613s7.131 0 9.431-.613a2.94 2.94 0 0 0 2.068-2.073A30.51 30.51 0 0 0 24 12a30.51 30.51 0 0 0-.502-5.814zM9.75 16.023v-8.047l7.5 4.023-7.5 4.024z"/></svg>
+        </a>
+        <a class="social-icon" href="https://discord.gg/6U5dU5mE4C" target="_blank" title="Discord">
+          <svg fill="currentColor" viewBox="0 0 24 24" width="26" height="26"><path d="M20.317 4.369A19.791 19.791 0 0 0 16.885 3.12a.08.08 0 0 0-.082.04 13.736 13.736 0 0 0-.617 1.27c-2.042-.31-4.088-.31-6.126 0a13.477 13.477 0 0 0-.62-1.27.077.077 0 0 0-.082-.04 19.736 19.736 0 0 0-3.432 1.25.072.072 0 0 0-.032.027C2.08 7.376 1.01 10.288.273 13.278a.077.077 0 0 0 .028.082c1.445 1.06 2.844 1.853 4.205 2.35a.08.08 0 0 0 .087-.027c.323-.442.611-.91.859-1.397a.076.076 0 0 0-.041-.106 8.092 8.092 0 0 1-1.172-.558.08.08 0 0 1-.008-.133c.078-.059.157-.12.233-.18a.073.073 0 0 1 .077-.01c2.419 1.104 5.04 1.104 7.453 0a.073.073 0 0 1 .078.009c.077.061.155.122.234.18a.08.08 0 0 1-.006.133 8.048 8.048 0 0 1-1.174.558.076.076 0 0 0-.04.106c.248.488.536.956.858 1.398a.079.079 0 0 0 .087.028c1.362-.498 2.76-1.29 4.206-2.351a.076.076 0 0 0 .028-.081c-.73-2.99-1.8-5.902-3.849-8.882a.075.075 0 0 0-.03-.027zM8.02 13.562c-.693 0-1.26-.635-1.26-1.419 0-.784.557-1.418 1.26-1.418.708 0 1.272.634 1.262 1.418 0 .784-.554 1.419-1.262 1.419zm7.96 0c-.693 0-1.26-.635-1.26-1.419 0-.784.557-1.418 1.26-1.418.708 0 1.272.634 1.262 1.418 0 .784-.554 1.419-1.262 1.419z"/></svg>
+        </a>
       </div>
-
-      <!-- Connect -->
-      <div id="page-connect" class="page-section">
-        <h2>Connect & Collaborate</h2>
-        <p>Find me across the digital landscape and let's build something remarkable.</p>
-        <div class="flex flex-wrap justify-center gap-4 mb-4">
-          <a href="https://github.com/shroomtop"        target="_blank" class="cta-button" style="background:#333">GitHub</a>
-          <a href="https://codepen.io/Shroomtop420"     target="_blank" class="cta-button" style="background:#1e1e1e">CodePen</a>
-          <a href="https://www.youtube.com/@shroomtop420"target="_blank" class="cta-button" style="background:#FF0000">YouTube</a>
-          <a href="https://shroomtop.github.io/info/"   target="_blank" class="cta-button" style="background:linear-gradient(135deg,#4a00e0,#8e2de2)">Website</a>
+      <div class="card mb-3">
+        <div>
+          <b>Email:</b> <a href="mailto:onesilentflame@gmail.com">onesilentflame@gmail.com</a><br>
+          <b>OpenAI GPT Store:</b> <a href="https://chat.openai.com/gpts?category=shroomtop" target="_blank">View all GPTs</a>
         </div>
-        <p><strong>Pronouns:</strong> He/Him</p>
-        <p class="small-text">Actively seeking AI SaaS collaborations, self‑improving systems, and secure full‑stack apps.</p>
       </div>
-
-      <!-- ██████ STORE ██████ -->
-      <div id="page-store" class="page-section">
-        <h2>Shroomtop420® Store</h2>
-        <p class="mb-6">Premium GPT tools built for creators, founders, and growth hackers.</p>
-
-        <!-- GPT Ghostwriter -->
-        <div class="store-card">
-          <h3>GPT Ghostwriter — $9</h3>
-          <p>Convert conversations into polished emails, blogs, or marketing copy. Export to HTML, PDF, or Markdown.</p>
-          <a href="https://buy.stripe.com/test_9AQ8ycdta0jk3vG5kk" target="_blank" rel="noopener noreferrer" class="buy-btn inline-block">Buy Now</a>
-        </div>
-
-        <!-- ScriptMint -->
-        <div class="store-card">
-          <h3>ScriptMint — $7</h3>
-          <p>Generate high‑converting landing pages from a single prompt. Built‑in monetization hooks.</p>
-          <a href="https://buy.stripe.com/test_00g5nE9PscKgcS4eUU" target="_blank" rel="noopener noreferrer" class="buy-btn inline-block">Buy Now</a>
-        </div>
-
-        <footer class="text-sm mt-8">
-          <a href="terms.html"    class="underline mr-4">Terms</a>
-          <a href="privacy.html"  class="underline mr-4">Privacy</a>
-          <a href="refunds.html"  class="underline">Refunds</a>
-        </footer>
+      <div class="text-xs text-center opacity-70 mt-2">
+        Actively seeking AI SaaS collabs, custom GPT requests, and automation partnerships.<br>
+        DM or email for white-label and enterprise deals.
       </div>
+    </section>
 
-      <p class="small-text text-center opacity-40">PS: Try the Konami code (↑↑↓↓←→←→BA)…</p>
+    <!-- FOOTER & LEGAL LINKS -->
+    <div class="footer-links">
+      <span class="footer-link" onclick="openModal('privacy')">Privacy Policy</span>
+      <span class="footer-link" onclick="openModal('terms')">Terms of Service</span>
+      <span class="footer-link" onclick="openModal('address')">Business Address</span>
     </div>
   </div>
-
-  <!-- Konami Modal -->
-  <div id="konami-modal" class="fixed inset-0 bg-[rgba(10,0,20,0.9)] backdrop-blur-lg hidden justify-center items-center p-5 z-50">
-    <div class="modal-content relative bg-[var(--card-bg)] border border-[var(--card-border-fallback)] rounded-xl px-10 py-8 max-w-lg">
-      <h2 class="text-[var(--accent-hover)] text-2xl font-bold mb-4">🚀 System Integrity Compromised… Just Kidding! 🚀</h2>
-      <p class="mb-4">Konami sequence verified. Welcome to the sub‑routine layer, Agent Shroomtop.</p>
-      <pre class="mb-4 text-[var(--accent-hover)] overflow-x-auto whitespace-pre rounded bg-[rgba(0,0,0,0.2)] p-4">
- /\_/\
-( o.o )
- > ^ <
-/|_/|-\
-/ / \ \
-/ /   \ \
-\ \   / /
- \_\ /_/ MH</pre>
-      <p>You've found a hidden message. Resilience + Code = Power. Keep building.</p>
-      <button id="close-konami-modal" class="mt-6 px-6 py-2 bg-[var(--accent-color)] rounded font-semibold hover:bg-[var(--accent-hover)] transition">Return to Mainframe</button>
+  <!-- MODALS (hidden by default) -->
+  <div class="modal-bg" id="modal-bg">
+    <div class="modal relative">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="modal-content"></div>
     </div>
   </div>
-
-  <!-- ===== JS ===== -->
   <script>
-    /* ---------- CONSTANTS ---------- */
-    const THANK_YOU_MESSAGES=[
-      "Support acknowledged. Fueling the innovation drive…",
-      "Gratitude sequence initiated. Thank you for empowering creation!",
-      "Contribution received. Scaling up the digital forge.",
-      "Signal boost confirmed. Your support makes a difference!",
-      "Resources allocated. Thanks for backing the vision!",
-      "Network effect amplified. Much appreciated!",
-      "Transaction complete. Building the future, together."
-    ];
-    const KONAMI_CODE=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
-    const GITHUB_PROJECTS=[
-      "GitSync-GPT","shroomtop","Jazzdupphotography.com","omnimeta-pwa","Brand-kit","desktop-tutorial",
-      "skills-copilot-codespaces-vscode","verify-stripe","Buy","info","Shroomgpt.com","Shroomtop420",
-      "services","HTML-ZIP-DEPLOYER","git-command-builder-ui","Ssh-key-note","crypto-toolkit",
-      "shroomtop-prompt-licensing-sdk","skills-hello-github-actions","Spotify-test","Buy-BTC","Master-checklist",
-      "map-usa-states","push-repo","shroomgpts-site","ChatGPTPrompts-standalone","ChristianGPT","Deep-Research",
-      "Premium-GPTS","skills-getting-started-with-github-copilot","Char-Count","Shroomtop420","Graph-Builder",
-      "DDWC-PREP","OmniPaste","Shroomtop420-pages","skills-introduction-to-codeql","congenial-dollop",
-      "legendary-computing-machine","skills-introduction-to-github","skills-github-pages",
-      "master-gpt-privacy-poli","github-pages","ChristianGPT-","Defining-Analyzing-Deep-Research",
-      "Graph-Builder-","ChatGPTDataExportReader"
-    ];
-
-    /* ---------- STATE ---------- */
-    let konamiIndex=0, clickSound=null, audioContext=null;
-    let scene,camera,renderer,morphingShape,clock;
-
-    /* ---------- DOM ---------- */
-    const navLinks=document.querySelectorAll('.nav-link');
-    const internalNavLinks=document.querySelectorAll('.internal-nav');
-    const pageSections=document.querySelectorAll('.page-section');
-    const aiGratitude=document.getElementById('ai-gratitude');
-    const konamiModal=document.getElementById('konami-modal');
-    const closeModalBtn=document.getElementById('close-konami-modal');
-    const projectSelect=document.getElementById('codepen-select');
-    const projectContainer=document.getElementById('codepen-embed-container');
-    const loadingMsg=document.getElementById('codepen-loading-message');
-
-    /* ---------- THREE.JS ---------- */
-    function initThreeJS(){
-      try{
-        if(!window.THREE){
-          document.getElementById('three-canvas-container').style.display='none';return;
-        }
-        scene=new THREE.Scene();clock=new THREE.Clock();
-        camera=new THREE.PerspectiveCamera(75,innerWidth/innerHeight,.1,1000);
-        camera.position.z=2.5;
-        renderer=new THREE.WebGLRenderer({alpha:true,antialias:true});
-        renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(devicePixelRatio);
-        document.getElementById('three-canvas-container').append(renderer.domElement);
-
-        scene.add(new THREE.AmbientLight(0xffffff,.4));
-        const pt=new THREE.PointLight(0xb89cf5,.8,100);pt.position.set(5,5,5);scene.add(pt);
-        const dir=new THREE.DirectionalLight(0xffffff,.5);dir.position.set(-5,-3,2);scene.add(dir);
-
-        const geo=new THREE.DodecahedronGeometry(1,1);geo.userData.originalVertices=[];
-        geo.vertices.forEach(v=>geo.userData.originalVertices.push(v.clone()));
-        const mat=new THREE.MeshStandardMaterial({color:0x9f7aea,metalness:.6,roughness:.3,emissive:0x1a0a2e});
-        morphingShape=new THREE.Mesh(geo,mat);scene.add(morphingShape);
-
-        addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)},false);
-        requestAnimationFrame(animate);
-      }catch(e){console.error("Three.js init failed:",e);document.getElementById('three-canvas-container').style.display='none'}
+    // Modal logic for legal/stripe
+    function openModal(type) {
+      let html = '';
+      if(type==='privacy'){
+        html = `<h2 class="text-xl font-bold mb-2">Privacy Policy</h2>
+        <p>We collect only the information needed to process your payment (handled securely by Stripe). Your email may be used to provide product access and updates. No spam, no reselling of data, ever.<br>All payments and sensitive data are processed by Stripe and are never stored on our servers.</p>`;
+      }
+      else if(type==='terms'){
+        html = `<h2 class="text-xl font-bold mb-2">Terms of Service</h2>
+        <p>Subscriptions are billed monthly. Cancel any time via your Stripe receipt or by emailing us. All digital products are delivered online. Support is available via email or Discord. Abuse or misuse of Shroomtop420™ tools will result in termination of access with no refund.</p>`;
+      }
+      else if(type==='address'){
+        html = `<h2 class="text-xl font-bold mb-2">Business Details</h2>
+        <b>Business Name:</b> Shroomtop420™<br>
+        <b>Business Owner:</b> Alex ("Shroomtop420™")<br>
+        <b>Business Email:</b> onesilentflame@gmail.com<br>
+        <b>Business Mailing Address:</b><br>
+        <span class="text-pink-200 font-bold">[YOUR MAILING ADDRESS OR PO BOX HERE]</span><br>
+        <small class="opacity-70">A mailing address is required for Stripe and customer communications.<br>Contact for enterprise/partnership details.</small>`;
+      }
+      document.getElementById('modal-content').innerHTML = html;
+      document.getElementById('modal-bg').classList.add('active');
     }
-    function animate(){
-      if(!scene)return;requestAnimationFrame(animate);
-      const delta=clock.getDelta(),time=clock.getElapsedTime();
-      morphingShape.rotation.x+=delta*.05;morphingShape.rotation.y+=delta*.08;
-      const orig=morphingShape.geometry.userData.originalVertices;
-      morphingShape.geometry.vertices.forEach((v,i)=>{
-        const ov=orig[i],n1=Math.sin(time*.8+ov.y*2.5),n2=Math.cos(time*.64+ov.z*2),n3=Math.sin(time*.96+ov.x*1.5);
-        const mAmt=ov.length()*.18*(.5+.5*Math.sin(time+i*.1));
-        v.copy(ov).add(new THREE.Vector3(n1,n2,n3).multiplyScalar(mAmt));
-      });
-      morphingShape.geometry.verticesNeedUpdate=true;morphingShape.geometry.computeVertexNormals();
-      renderer.render(scene,camera);
+    function closeModal(){
+      document.getElementById('modal-bg').classList.remove('active');
     }
-
-    /* ---------- AUDIO ---------- */
-    function loadSound(){
-      if(!audioContext){audioContext=new (AudioContext||webkitAudioContext)()}
-      clickSound=()=>{
-        if(audioContext.state==='suspended'){audioContext.resume()}
-        const osc=audioContext.createOscillator(),gain=audioContext.createGain();
-        osc.type='sine';osc.frequency.setValueAtTime(880,audioContext.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(440,audioContext.currentTime+.1);
-        gain.gain.setValueAtTime(.15,audioContext.currentTime);
-        gain.gain.exponentialRampToValueAtTime(.001,audioContext.currentTime+.15);
-        osc.connect(gain);gain.connect(audioContext.destination);
-        osc.start();osc.stop(audioContext.currentTime+.15);
-      };
-    }
-
-    /* ---------- NAVIGATION ---------- */
-    function navigateTo(pageId,skipSound=false){
-      if(audioContext&&audioContext.state==='suspended'){audioContext.resume()}
-      if(!skipSound&&clickSound)clickSound();
-      pageSections.forEach(s=>{s.classList.remove('active');s.style.display='none'});
-      const tgt=document.getElementById(`page-${pageId}`)||document.getElementById('page-home');
-      tgt.style.display='block';setTimeout(()=>tgt.classList.add('active'),10);
-      navLinks.forEach(l=>l.classList.toggle('active',l.dataset.page===pageId));
-      if(pageId==='support'&&aiGratitude){
-        aiGratitude.textContent=THANK_YOU_MESSAGES[Math.floor(Math.random()*THANK_YOU_MESSAGES.length)];
-      }else if(aiGratitude){aiGratitude.textContent=''}
-      try{
-        const curHash=location.hash.substring(1);
-        if(history.pushState&&pageId!==curHash){history.pushState({page:pageId},`Page ${pageId}`,`#${pageId}`)}
-      }catch(e){}
-      document.querySelector('.main-container').scrollIntoView({behavior:'smooth'});
-    }
-
-    /* ---------- KONAMI ---------- */
-    function handleKonami(e){
-      const key=e.key.toLowerCase(),req=KONAMI_CODE[konamiIndex].toLowerCase();
-      if(key===req){konamiIndex++;if(konamiIndex===KONAMI_CODE.length){konamiModal.classList.remove('hidden');clickSound&&clickSound();konamiIndex=0}}
-      else{konamiIndex=(key===KONAMI_CODE[0].toLowerCase())?1:0}
-    }
-
-    /* ---------- KEYBOARD NAV ---------- */
-    function handleKeyboardNav(e){
-      if(e.ctrlKey&&!isNaN(+e.key)){const link=document.querySelector(`.nav-link[data-key="${e.key}"]`);
-        if(link){e.preventDefault();navigateTo(link.dataset.page)}}
-    }
-
-    /* ---------- GITHUB EMBEDS ---------- */
-    function populateProjectSelector(){
-      while(projectSelect.options.length>1){projectSelect.remove(1)}
-      GITHUB_PROJECTS.forEach(repo=>{
-        const o=document.createElement('option');
-        o.value=`https://shroomtop.github.io/${repo}/`;o.textContent=repo;projectSelect.append(o);
-      });
-    }
-    function loadProject(url){
-      if(!url){projectContainer.innerHTML='<p class="italic opacity-70">Invalid selection.</p>';loadingMsg.classList.add('hidden');return}
-      loadingMsg.classList.remove('hidden');projectContainer.innerHTML='';
-      const iframe=document.createElement('iframe');
-      iframe.src=url;iframe.style.width='100%';iframe.style.height='600px';iframe.frameBorder='0';iframe.loading='lazy';iframe.allowFullscreen=true;
-      iframe.onload=()=>{loadingMsg.classList.add('hidden');clickSound&&clickSound()};
-      iframe.onerror=()=>{loadingMsg.classList.add('hidden');projectContainer.innerHTML='<p class="text-red-400">Failed to load project.</p>'};
-      projectContainer.append(iframe);
-    }
-
-    /* ---------- INIT ---------- */
-    addEventListener('DOMContentLoaded',()=>{
-      /* audio priming */document.body.addEventListener('click',loadSound,{once:true});document.body.addEventListener('keydown',loadSound,{once:true});
-      /* init 3‑D */initThreeJS();
-
-      /* nav clicks */navLinks.forEach(l=>l.addEventListener('click',e=>{if(l.dataset.page){e.preventDefault();navigateTo(l.dataset.page)}}));
-      internalNavLinks.forEach(l=>l.addEventListener('click',e=>{e.preventDefault();navigateTo(l.dataset.page)}));
-
-      /* konami/key nav */addEventListener('keydown',handleKonami);addEventListener('keydown',handleKeyboardNav);
-
-      /* modal close */closeModalBtn.addEventListener('click',()=>{konamiModal.classList.add('hidden');clickSound&&clickSound()});
-
-      /* project dropdown */populateProjectSelector();
-      projectSelect.addEventListener('change',e=>loadProject(e.target.value));
-
-      /* history nav */addEventListener('popstate',ev=>navigateTo((ev.state&&ev.state.page)||'home',true));
-
-      /* initial route */navigateTo(location.hash.substring(1)||'home',true);
+    // Close modal on click outside
+    document.getElementById('modal-bg').addEventListener('click',function(e){
+      if(e.target===this) closeModal();
+    });
+    // Optional: keyboard support for esc
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape') closeModal();
     });
   </script>
 </body>
