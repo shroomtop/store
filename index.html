@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shroomtop420™ — AI, Automation & Digital Profit Studio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Shroomtop420™ – Launch, Monetize, and Automate AI-Powered Products</title>
+  <meta name="description" content="Shroomtop420™ delivers next-gen automation tools, custom GPTs, and digital assets—engineered for creators, startups, and power users.">
+  <meta name="keywords" content="Shroomtop420, AI Automation, GPTs, Monetization, CodePen, Termux, Stripe, Web Apps, OpenAI, Digital Products, SaaS">
+  <meta name="author" content="Alex (Shroomtop420™)">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html,body {height:100%;margin:0;padding:0;scroll-behavior:smooth;}
     body {
@@ -15,229 +18,254 @@
       min-height: 100vh;
       overflow-x:hidden;
     }
-    .main {max-width: 900px; margin: 2vw auto 0 auto; padding: 24px 6vw 48px 6vw; border-radius: 2rem;
-      background:rgba(26,10,46,0.93); box-shadow:0 12px 50px 0 #11052c90, 0 0 0 3px #ffffff09;
-      border: 2.5px solid rgba(255,255,255,0.09); position:relative; z-index:2;}
-    nav { z-index:2; display:flex; justify-content:center; flex-wrap:wrap; gap:6px; margin-bottom: 32px;}
-    .nav-btn { color:#b89cf5; background:rgba(255,255,255,0.08); border:none; border-radius:18px; padding:11px 18px;
-      font-weight:700; font-size:1.03rem; cursor:pointer; transition:.23s; outline:none; letter-spacing:0.01em; min-width:88px;
-      margin:1.5px 1px;}
-    .nav-btn:hover,.nav-btn.active { color:#fff; background:linear-gradient(90deg,#9f7aea 70%,#7fd9fc 120%);
-      box-shadow:0 2.5px 20px #9f7aea44;}
-    section {margin-bottom:38px;}
-    .section-title {font-size:1.42em;font-weight:900;margin-bottom:11px;color:#b89cf5;text-shadow:0 2px 15px #9f7aea33;}
-    .glass-card, .card {background:rgba(255,255,255,0.13); border-radius:1.2rem; padding:18px 12px 14px 16px;
-      box-shadow:0 4px 22px #9f7aea22; border:1.2px solid rgba(255,255,255,0.09); margin-bottom: 18px;}
-    .stripe-btn {background:linear-gradient(90deg,#9f7aea,#b89cf5 85%); color:#fff;border:none;border-radius:30px;font-size:1.1em;
-      padding:15px 26px;font-weight:800;box-shadow:0 4px 44px #9f7aea44;margin:10px 0 6px 0;cursor:pointer;transition:.18s;}
-    .stripe-btn:hover {filter:brightness(1.11) saturate(1.07);}
-    .social-links {display:flex;flex-wrap:wrap;gap:18px;margin:10px 0 7px 0;justify-content:center;}
-    .social-icon {width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;
-      border-radius:50%;background:rgba(26,10,46,0.83);box-shadow:0 1.5px 10px #9f7aea44;transition:.18s; font-size:1.37em; color:#fff; text-decoration:none;}
-    .social-icon:hover {background:linear-gradient(90deg,#7fd9fc,#9f7aea 90%);color:#fff;transform:scale(1.14);}
-    .footer-links {margin-top:36px;display:flex;justify-content:center;gap:22px;font-size:.97em;opacity:.78;}
-    .footer-link {text-decoration:underline;color:#b89cf5;cursor:pointer;transition:.13s;}
-    .footer-link:hover {color:#fff;}
-    .modal-bg {display:none;position:fixed;inset:0;background:rgba(18,7,29,0.83);z-index:90;align-items:center;justify-content:center;}
-    .modal-bg.active {display:flex;}
-    .modal {background:rgba(26,10,46,0.98);border-radius:1.1rem;padding:32px 26px 22px 26px;box-shadow:0 10px 44px #381d6e80;
-      max-width:97vw;width:420px;color:#e0d8f0;}
-    .modal .close {position:absolute;top:13px;right:24px;font-size:1.7em;cursor:pointer;color:#9f7aea;}
-    @media (max-width: 900px){.main{max-width:99vw;padding:14px 0 22vw 0; border-radius:0;}}
-    @media (max-width: 600px){
-      .main{padding:8px 0 23vw 0;}
-      .social-icon{width:34px;height:34px;}
-      .modal{padding:19px 7vw 18px 7vw;width:95vw;}
+    .main-container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 24px 6vw 42px 6vw;
+      position: relative;
+      z-index: 1;
     }
-    .text-glow { text-shadow:0 1px 15px #fbc2eb, 0 2px 11px #9f7aea44;}
-    .icon-bullet {margin-right:5px;vertical-align:-2px;color:#b89cf5;}
-    .skills-table {width:100%;font-size:.97em;}
-    .skills-table th,.skills-table td {padding:7px 5px;text-align:left;}
-    .skills-table th {color:#b89cf5;font-weight:800;}
-    .skills-table td {color:#e0d8f0;}
-    .skills-domain {font-weight:700;}
+    .glass-card {
+      background: rgba(44, 18, 56, 0.89);
+      border-radius: 1.5rem;
+      padding: 1.5rem 1.2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 32px #1a0a2e50;
+      border: 1.5px solid rgba(255,255,255,0.09);
+    }
+    .featured-icon {
+      width: 38px; height: 38px; display:inline-block; vertical-align:middle; margin-right:0.7rem;
+    }
+    @media (max-width: 700px) {
+      .main-container { padding: 10px 1vw 20vw 1vw; }
+      .glass-card { padding: 1rem 0.7rem; }
+    }
   </style>
 </head>
 <body>
-  <div class="main relative z-10 pb-12 md:pb-20">
-    <nav>
-      <button class="nav-btn" onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">Home</button>
-      <button class="nav-btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</button>
-      <button class="nav-btn" onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">Skills</button>
-      <button class="nav-btn" onclick="document.getElementById('roadmap').scrollIntoView({behavior:'smooth'})">Roadmap</button>
-      <button class="nav-btn" onclick="document.getElementById('store').scrollIntoView({behavior:'smooth'})">Store</button>
-      <button class="nav-btn" onclick="document.getElementById('faq').scrollIntoView({behavior:'smooth'})">FAQ</button>
-      <button class="nav-btn" onclick="document.getElementById('connect').scrollIntoView({behavior:'smooth'})">Connect</button>
-    </nav>
-    <!-- HOME -->
-    <section id="home">
-      <div class="section-title text-glow">Shroomtop420™</div>
-      <div class="text-xl font-bold mb-2 text-glow">AI, Automation & Monetization Lab</div>
-      <div class="glass-card text-base">
-        <span class="icon-bullet">🧬</span> Building antifragile, self-improving code products.<br>
-        <span class="icon-bullet">📱</span> Mobile-first workflow (develop & deploy from Android + Termux).<br>
-        <span class="icon-bullet">⚡</span> 100+ GPTs launched • Stripe-powered paywalls.<br>
-        <span class="icon-bullet">🛠️</span> Stacks: HTML5, ES6, Tailwind, Three-JS, Flask, GitHub, Stripe.
-      </div>
-      <a href="#store" class="stripe-btn block w-fit mx-auto mt-7 mb-1">Unlock Premium GPTs</a>
-      <div class="text-xs mt-3 text-center opacity-80">No hype. No filler. Pure digital profit engineering.</div>
+  <nav class="w-full py-4 flex flex-wrap justify-center gap-2 bg-transparent z-10 sticky top-0">
+    <a href="#home" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Home</a>
+    <a href="#about" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">About</a>
+    <a href="#projects" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Projects</a>
+    <a href="#skills" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Skills</a>
+    <a href="#roadmap" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Roadmap</a>
+    <a href="#store" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Store</a>
+    <a href="#connect" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Connect</a>
+    <a href="#legal" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Legal</a>
+  </nav>
+  <main class="main-container pt-6 pb-16">
+    <!-- Hero Section -->
+    <section id="home" class="mb-10 text-center">
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">Launch, Monetize, and Automate <span class="text-pink-400">AI-Powered Products</span></h1>
+      <p class="mt-2 text-lg md:text-xl text-purple-200 max-w-2xl mx-auto">
+        The Shroomtop420™ Lab delivers next-gen automation tools, custom GPTs, and digital assets—engineered for creators, startups, and power users.
+      </p>
+      <a href="#store" class="inline-block mt-6 px-8 py-3 text-lg font-bold bg-purple-600 hover:bg-pink-500 rounded-full text-white shadow-md transition">Unlock Premium GPTs</a>
     </section>
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-title">About</div>
-      <div class="glass-card mb-2">
-        <b>Philosophy:</b> Radical adaptability, zero-bullshit execution. Turned obsession + adversity into a brand that only ships code which <em>earns, scales & improves itself</em>.
+
+    <!-- AI, Automation, Monetization Lab -->
+    <section class="glass-card mb-10" id="lab">
+      <div class="mb-2">
+        <span class="inline-block bg-pink-500 text-white px-3 py-1 rounded-full font-bold text-xs mb-2">Ranked Top 0.1% by OpenAI</span>
       </div>
-      <div class="glass-card">
-        <b>Story:</b> Ex-gamer, now sober engineer running a pocket-sized dev empire from a phone.
+      <h2 class="text-2xl font-bold mb-2">AI, Automation & Monetization Lab</h2>
+      <ul class="list-disc ml-6 text-base text-purple-100 space-y-1">
+        <li>Building antifragile, self-improving code products.</li>
+        <li>Mobile-first workflow (develop & deploy from Android + Termux).</li>
+        <li>100+ GPTs launched · Stripe-powered paywalls.</li>
+        <li>Stacks: HTML5, ES6, Tailwind, Three.js, Flask, GitHub, Stripe.</li>
+      </ul>
+    </section>
+
+    <!-- About -->
+    <section class="glass-card mb-10" id="about">
+      <h2 class="text-2xl font-bold mb-3">About Shroomtop420™</h2>
+      <p class="mb-3 text-base">
+        Hi, I’m Alex (“Shroomtop420™”). My journey began as a gamer and hacker, driven by curiosity and a love for building. After overcoming personal adversity, I reinvented myself as a mobile-first engineer—turning obsession into a brand that ships code which <i>earns, scales & improves itself</i>.
+      </p>
+      <ul class="list-disc ml-6 text-purple-100 space-y-1">
+        <li>170+ custom GPTs and AI agents built</li>
+        <li>Mastery of automation, zero-dep web apps, and prompt engineering</li>
+        <li>Product launches on Stripe, GitHub, and the OpenAI GPT Store</li>
+        <li>Recognized in the top 0.1% of AI prompt engineers worldwide</li>
+      </ul>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="mb-12" id="projects">
+      <h2 class="text-2xl font-bold mb-4">Featured Projects</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        <!-- Project 1 -->
+        <div class="glass-card flex flex-col h-full">
+          <span class="featured-icon mb-2">
+            <!-- Official CodePen SVG -->
+            <svg viewBox="0 0 24 24" width="38" height="38" fill="currentColor" aria-label="CodePen" class="text-white/90">
+              <path d="M22.218 7.433a.974.974 0 00-.012-.093c-.007-.03-.018-.057-.028-.086-.014-.04-.027-.08-.048-.117-.012-.022-.028-.041-.043-.061a.977.977 0 00-.08-.097l-.002-.002-.001-.001-.001-.001-.001-.001-8.669-6.03c-.337-.235-.779-.235-1.116 0l-8.67 6.03c-.001 0-.001.001-.002.001-.027.02-.052.042-.073.067-.017.02-.033.041-.048.062-.021.037-.034.077-.048.117-.01.03-.021.057-.028.087-.008.031-.013.062-.013.094v.01 9.138c0 .008.002.017.003.025.001.011.003.021.004.031.007.032.017.063.029.094.01.027.021.054.035.079.017.032.037.062.061.09.016.019.031.038.05.055.002.002.003.003.005.005l8.669 6.031c.168.117.381.18.558.18.176 0 .39-.063.558-.18l8.669-6.03c.002-.002.003-.003.005-.005a.988.988 0 00.05-.055c.024-.027.044-.058.062-.09.013-.025.024-.052.034-.079a.974.974 0 00.03-.094c.002-.01.003-.02.004-.03.001-.008.003-.017.003-.025v-9.138c0-.004-.002-.006-.002-.01zm-2.159.53-3.918 2.727-3.065-2.135V3.065l6.983 4.898zm-9.059-4.898v5.495l-3.065 2.135-3.918-2.727 6.983-4.903zm-8.013 6.142 3.681 2.563-3.681 2.564V9.207zm1.03 3.578 3.918-2.729 3.065 2.137v4.272l-6.983-4.885zm8.013 9.278-6.983-4.857 3.679-2.564 3.304 2.304v5.117zm1.001 0v-5.117l3.304-2.304 3.678 2.564-6.982 4.857zm7.012-6.096-3.681-2.564 3.681-2.563v5.127z"/>
+            </svg>
+          </span>
+          <h3 class="font-bold text-lg mb-1">GPT Directory</h3>
+          <div class="text-base mb-2">Browse and unlock 100+ premium GPTs for productivity and automation.</div>
+          <a href="https://codepen.io/Shroomtop420/pen/MYWmjaa" class="underline text-sky-300" target="_blank" rel="noopener">View Demo</a>
+        </div>
+        <!-- Project 2 -->
+        <div class="glass-card flex flex-col h-full">
+          <span class="featured-icon mb-2">
+            <svg viewBox="0 0 24 24" width="38" height="38" fill="currentColor" aria-label="CodePen" class="text-white/90">
+              <path d="M22.218 7.433a.974.974 0 00-.012-.093c-.007-.03-.018-.057-.028-.086-.014-.04-.027-.08-.048-.117-.012-.022-.028-.041-.043-.061a.977.977 0 00-.08-.097l-.002-.002-.001-.001-.001-.001-.001-.001-8.669-6.03c-.337-.235-.779-.235-1.116 0l-8.67 6.03c-.001 0-.001.001-.002.001-.027.02-.052.042-.073.067-.017.02-.033.041-.048.062-.021.037-.034.077-.048.117-.01.03-.021.057-.028.087-.008.031-.013.062-.013.094v.01 9.138c0 .008.002.017.003.025.001.011.003.021.004.031.007.032.017.063.029.094.01.027.021.054.035.079.017.032.037.062.061.09.016.019.031.038.05.055.002.002.003.003.005.005l8.669 6.031c.168.117.381.18.558.18.176 0 .39-.063.558-.18l8.669-6.03c.002-.002.003-.003.005-.005a.988.988 0 00.05-.055c.024-.027.044-.058.062-.09.013-.025.024-.052.034-.079a.974.974 0 00.03-.094c.002-.01.003-.02.004-.03.001-.008.003-.017.003-.025v-9.138c0-.004-.002-.006-.002-.01zm-2.159.53-3.918 2.727-3.065-2.135V3.065l6.983 4.898zm-9.059-4.898v5.495l-3.065 2.135-3.918-2.727 6.983-4.903zm-8.013 6.142 3.681 2.563-3.681 2.564V9.207zm1.03 3.578 3.918-2.729 3.065 2.137v4.272l-6.983-4.885zm8.013 9.278-6.983-4.857 3.679-2.564 3.304 2.304v5.117zm1.001 0v-5.117l3.304-2.304 3.678 2.564-6.982 4.857zm7.012-6.096-3.681-2.564 3.681-2.563v5.127z"/>
+            </svg>
+          </span>
+          <h3 class="font-bold text-lg mb-1">Profit Surface Visualizer</h3>
+          <div class="text-base mb-2">Visualize and optimize digital product earnings with interactive 2D/3D maps.</div>
+          <a href="https://codepen.io/Shroomtop420/pen/OPJjeGj" class="underline text-sky-300" target="_blank" rel="noopener">Explore</a>
+        </div>
+        <!-- Project 3 -->
+        <div class="glass-card flex flex-col h-full">
+          <span class="featured-icon mb-2">
+            <svg viewBox="0 0 24 24" width="38" height="38" fill="currentColor" aria-label="CodePen" class="text-white/90">
+              <path d="M22.218 7.433a.974.974 0 00-.012-.093c-.007-.03-.018-.057-.028-.086-.014-.04-.027-.08-.048-.117-.012-.022-.028-.041-.043-.061a.977.977 0 00-.08-.097l-.002-.002-.001-.001-.001-.001-.001-.001-8.669-6.03c-.337-.235-.779-.235-1.116 0l-8.67 6.03c-.001 0-.001.001-.002.001-.027.02-.052.042-.073.067-.017.02-.033.041-.048.062-.021.037-.034.077-.048.117-.01.03-.021.057-.028.087-.008.031-.013.062-.013.094v.01 9.138c0 .008.002.017.003.025.001.011.003.021.004.031.007.032.017.063.029.094.01.027.021.054.035.079.017.032.037.062.061.09.016.019.031.038.05.055.002.002.003.003.005.005l8.669 6.031c.168.117.381.18.558.18.176 0 .39-.063.558-.18l8.669-6.03c.002-.002.003-.003.005-.005a.988.988 0 00.05-.055c.024-.027.044-.058.062-.09.013-.025.024-.052.034-.079a.974.974 0 00.03-.094c.002-.01.003-.02.004-.03.001-.008.003-.017.003-.025v-9.138c0-.004-.002-.006-.002-.01zm-2.159.53-3.918 2.727-3.065-2.135V3.065l6.983 4.898zm-9.059-4.898v5.495l-3.065 2.135-3.918-2.727 6.983-4.903zm-8.013 6.142 3.681 2.563-3.681 2.564V9.207zm1.03 3.578 3.918-2.729 3.065 2.137v4.272l-6.983-4.885zm8.013 9.278-6.983-4.857 3.679-2.564 3.304 2.304v5.117zm1.001 0v-5.117l3.304-2.304 3.678 2.564-6.982 4.857zm7.012-6.096-3.681-2.564 3.681-2.563v5.127z"/>
+            </svg>
+          </span>
+          <h3 class="font-bold text-lg mb-1">PWA App Suite</h3>
+          <div class="text-base mb-2">Mobile-first web apps for devs and entrepreneurs. 100% offline-capable.</div>
+          <a href="https://codepen.io/Shroomtop420/pen/EaxeGYY" class="underline text-sky-300" target="_blank" rel="noopener">Live Preview</a>
+        </div>
       </div>
     </section>
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-title">Skills Snapshot</div>
-      <div class="card mb-3">
-        <table class="skills-table">
-          <tr><th>Domain</th><th>Percentile</th><th>Highlights</th><th>Next Focus</th></tr>
-          <tr><td class="skills-domain">Prompt Engineering</td><td class="text-lime-400 font-bold">95%</td>
-            <td>170+ GPTs, meta-prompts, automation</td>
-            <td>Fine-tuning & reliability</td></tr>
-          <tr><td class="skills-domain">Frontend Dev</td><td class="text-sky-400 font-bold">90%</td>
-            <td>Zero-dep webapps, 3D/Canvas, PWA</td>
-            <td>Large-scale SPAs, a11y</td></tr>
-          <tr><td class="skills-domain">Backend/API</td><td class="text-yellow-300 font-bold">60%</td>
-            <td>Node, Flask, DB basics</td>
-            <td>Scaling & auth</td></tr>
+
+    <!-- Skills Snapshot -->
+    <section class="glass-card mb-10" id="skills">
+      <h2 class="text-2xl font-bold mb-3">Skills Snapshot</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-left text-base text-purple-100 border-separate" style="border-spacing:0 0.6rem;">
+          <thead>
+            <tr>
+              <th class="pr-4 pb-2 text-purple-300 font-bold">Domain</th>
+              <th class="pr-4 pb-2 text-purple-300 font-bold">Percentile</th>
+              <th class="pr-4 pb-2 text-purple-300 font-bold">Highlights</th>
+              <th class="pb-2 text-purple-300 font-bold">Next Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pr-4 font-semibold">Prompt Engineering</td>
+              <td class="pr-4">95%</td>
+              <td class="pr-4">170+ GPTs, meta-prompts, automation</td>
+              <td>Fine-tuning &amp; reliability</td>
+            </tr>
+            <tr>
+              <td class="pr-4 font-semibold">Frontend Dev</td>
+              <td class="pr-4">90%</td>
+              <td class="pr-4">Zero-dep webapps, 3D/Canvas, PWA</td>
+              <td>Large-scale SPAs, a11y</td>
+            </tr>
+            <tr>
+              <td class="pr-4 font-semibold">Backend/API</td>
+              <td class="pr-4">60%</td>
+              <td class="pr-4">Node, Flask, DB basics</td>
+              <td>Scaling &amp; auth</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </section>
-    <!-- ROADMAP -->
-    <section id="roadmap">
-      <div class="section-title">Roadmap 2025</div>
-      <div class="glass-card mb-2">
-        <b>Q2-Q3</b> • Launch full Stripe license engine, GitHub monetization layer.<br>
-        <b>Q4</b> • Profit Surface Visualizer, PWA app-suite, white-label tool line.
-      </div>
-      <div class="card">
+
+    <!-- Roadmap 2025 -->
+    <section class="glass-card mb-10" id="roadmap">
+      <h2 class="text-2xl font-bold mb-3">Roadmap 2025</h2>
+      <ul class="list-disc ml-6 text-purple-100 space-y-1 mb-2">
+        <li><b>Q2–Q3:</b> Launch full Stripe license engine, GitHub monetization layer.</li>
+        <li><b>Q4:</b> Profit Surface Visualizer, PWA app-suite, white-label tool line.</li>
+      </ul>
+      <div class="text-sm text-purple-300">
         <b>Upcoming Builds</b>
-        <ul class="list-disc ml-5 mt-2 text-sm">
+        <ul class="list-disc ml-6">
           <li>Prompt Licensing Toolkit v3</li>
           <li>GPT Marketplace / Directory</li>
           <li>Self-updating code products</li>
         </ul>
       </div>
     </section>
-    <!-- STORE -->
-    <section id="store">
-      <div class="section-title">Shroomtop420™ Store</div>
-      <div class="card mb-4">
-        <div class="text-lg font-bold mb-1 text-glow">All Premium GPTs – <span class="text-sky-300">$15/mo</span></div>
-        <p class="mb-2">One subscription unlocks <b>all premium Shroomtop420™ GPTs</b> in the OpenAI GPT Store.<br>
-          <span class="opacity-80">No hype. No filler. <b>Just deploy, automate, monetize.</b></span>
-        </p>
-        <!-- Stripe Buy Button -->
-        <div class="w-full flex justify-center my-5">
-          <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-          <stripe-buy-button
-            buy-button-id="buy_btn_1RPEqmHgDm6bxqi6KGVKhawa"
-            publishable-key="pk_live_51NcN7SHgDm6bxqi6Ehu0b6BQ00WLdZ2zaVwwRo1rJPGZJM1jqxThBOwyBk7SZHH1VKHCICzo5TNTpDQal6m4G4xc00nYFcP3Aq"
-          ></stripe-buy-button>
-        </div>
-        <div class="text-xs mt-3 opacity-80 text-center">
-          Instant access: After purchase, use your email to unlock all current and future GPTs via OpenAI GPT Store.
-        </div>
-      </div>
-    </section>
-    <!-- FAQ -->
-    <section id="faq">
-      <div class="section-title">FAQ</div>
-      <div class="card">
-        <div class="font-bold mb-2">How do I access the GPTs after subscribing?</div>
-        <div class="mb-3">After you subscribe, use your Stripe email to request unlock via the OpenAI GPT Store or contact me directly for immediate access. Email: <a href="mailto:onesilentflame@gmail.com">onesilentflame@gmail.com</a></div>
-        <div class="font-bold mb-2">What’s included in the subscription?</div>
-        <div class="mb-3">You get access to <b>all current and future Shroomtop420™ premium GPTs</b>—no need to buy separately. New tools are automatically unlocked for subscribers.</div>
-        <div class="font-bold mb-2">Where can I find support or ask for features?</div>
-        <div class="mb-3">Reach out via <a href="mailto:onesilentflame@gmail.com">email</a> or join the <a href="https://discord.gg/6U5dU5mE4C" target="_blank">Discord server</a> for real-time support and roadmap voting.</div>
-        <div class="font-bold mb-2">Is this secure and private?</div>
-        <div>All payments go through Stripe. Your data is never sold, and you can unsubscribe any time.</div>
-      </div>
-    </section>
-    <!-- CONNECT -->
-    <section id="connect">
-      <div class="section-title">Contact & Connect</div>
-      <div class="social-links mb-3">
-        <a class="social-icon" href="https://github.com/shroomtop" target="_blank" title="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.304 3.438 9.8 8.205 11.387.6.113.82-.263.82-.582v-2.217c-3.338.726-4.033-1.416-4.033-1.416-.546-1.386-1.333-1.756-1.333-1.756-1.09-.746.082-.73.082-.73 1.204.085 1.838 1.243 1.838 1.243 1.072 1.837 2.81 1.306 3.495.998.108-.776.42-1.306.762-1.607-2.665-.303-5.466-1.332-5.466-5.932 0-1.311.469-2.382 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.958-.267 1.984-.399 3.003-.404 1.018.005 2.045.137 3.003.404 2.289-1.552 3.295-1.23 3.295-1.23.654 1.653.243 2.873.12 3.176.77.839 1.235 1.91 1.235 3.221 0 4.61-2.805 5.625-5.478 5.922.43.372.823 1.104.823 2.225v3.293c0 .321.216.699.825.581C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        </a>
-        <a class="social-icon" href="https://codepen.io/Shroomtop420" target="_blank" title="CodePen">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M22.218 7.433a.974.974 0 00-.012-.093c-.007-.03-.018-.057-.028-.086-.014-.04-.027-.08-.048-.117-.012-.022-.028-.041-.043-.061a.977.977 0 00-.08-.097l-.002-.002-.001-.001-.001-.001-.001-.001-8.669-6.03c-.337-.235-.779-.235-1.116 0l-8.67 6.03c-.001 0-.001.001-.002.001-.027.02-.052.042-.073.067-.017.02-.033.041-.048.062-.021.037-.034.077-.048.117-.01.03-.021.057-.028.087-.008.031-.013.062-.013.094v.01 9.138c.002-.017.003-.025v-9.138c0-.004-.002-.006-.002-.01zm-2.159.53-3.918 2.727-3.065-2.135V3.065l6.983 4.898zm-9.059-4.898v5.495l-3.065 2.135-3.918-2.727 6.983-4.903zm-8.013 6.142 3.681 2.563-3.681 2.564V9.207zm1.03 3.578 3.918-2.729 3.065 2.137v4.272l-6.983-4.885zm8.013 9.278-6.983-4.857 3.679-2.564 3.304 2.304v5.117zm1.001 0v-5.117l3.304-2.304 3.678 2.564-6.982 4.857zm7.012-6.096-3.681-2.564 3.681-2.563v5.127z"/></svg>
-        </a>
-        <a class="social-icon" href="https://www.youtube.com/@shroomtop420" target="_blank" title="YouTube">
-          <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M23.498 6.186a2.94 2.94 0 0 0-2.068-2.073C19.131 3.5 12 3.5 12 3.5s-7.131 0-9.431.613A2.94 2.94 0 0 0 .5 6.186 30.51 30.51 0 0 0 0 12a30.51 30.51 0 0 0 .5 5.814 2.94 2.94 0 0 0 2.069 2.073c2.3.613 9.431.613 9.431.613s7.131 0 9.431-.613a2.94 2.94 0 0 0 2.068-2.073A30.51 30.51 0 0 0 24 12a30.51 30.51 0 0 0-.502-5.814zM9.75 16.023v-8.047l7.5 4.023-7.5 4.024z"/></svg>
-        </a>
-        <a class="social-icon" href="https://discord.gg/6U5dU5mE4C" target="_blank" title="Discord">
-          <svg fill="currentColor" viewBox="0 0 24 24" width="26" height="26"><path d="M20.317 4.369A19.791 19.791 0 0 0 16.885 3.12a.08.08 0 0 0-.082.04 13.736 13.736 0 0 0-.617 1.27c-2.042-.31-4.088-.31-6.126 0a13.477 13.477 0 0 0-.62-1.27.077.077 0 0 0-.082-.04 19.736 19.736 0 0 0-3.432 1.25.072.072 0 0 0-.032.027C2.08 7.376 1.01 10.288.273 13.278a.077.077 0 0 0 .028.082c1.445 1.06 2.844 1.853 4.205 2.35a.08.08 0 0 0 .087-.027c.323-.442.611-.91.859-1.397a.076.076 0 0 0-.041-.106 8.092 8.092 0 0 1-1.172-.558.08.08 0 0 1-.008-.133c.078-.059.157-.12.233-.18a.073.073 0 0 1 .077-.01c2.419 1.104 5.04 1.104 7.453 0a.073.073 0 0 1 .078.009c.077.061.155.122.234.18a.08.08 0 0 1-.006.133 8.048 8.048 0 0 1-1.174.558.076.076 0 0 0-.04.106c.248.488.536.956.858 1.398a.079.079 0 0 0 .087.028c1.362-.498 2.76-1.29 4.206-2.351a.076.076 0 0 0 .028-.081c-.73-2.99-1.8-5.902-3.849-8.882a.075.075 0 0 0-.03-.027zM8.02 13.562c-.693 0-1.26-.635-1.26-1.419 0-.784.557-1.418 1.26-1.418.708 0 1.272.634 1.262 1.418 0 .784-.554 1.419-1.262 1.419zm7.96 0c-.693 0-1.26-.635-1.26-1.419 0-.784.557-1.418 1.26-1.418.708 0 1.272.634 1.262 1.418 0 .784-.554 1.419-1.262 1.419z"/></svg>
-        </a>
-      </div>
-      <div class="card mb-3">
-        <div>
-          <b>Email:</b> <a href="mailto:onesilentflame@gmail.com">onesilentflame@gmail.com</a><br>
-          <b>OpenAI GPT Store:</b> <a href="https://chat.openai.com/gpts?category=shroomtop" target="_blank">View all GPTs</a>
-        </div>
-      </div>
-      <div class="text-xs text-center opacity-70 mt-2">
-        Actively seeking AI SaaS collabs, custom GPT requests, and automation partnerships.<br>
-        DM or email for white-label and enterprise deals.
+
+    <!-- Store -->
+    <section class="glass-card mb-10" id="store">
+      <h2 class="text-2xl font-bold mb-3">Shroomtop420™ Store</h2>
+      <div class="flex flex-col items-center">
+        <img src="https://shroomtop.github.io/OpenAI-rank/assets/allgpts.png" alt="All GPTs Access" class="rounded-xl mb-3 w-full max-w-xs" loading="lazy"/>
+        <p class="text-lg mb-1 font-semibold text-white">All Premium GPTs – <span class="text-pink-400 font-bold">$15/mo</span></p>
+        <a href="https://buy.stripe.com/aFa6oHeG74DQ8ZB3LubQY01" class="inline-block px-7 py-2 bg-pink-600 hover:bg-pink-700 rounded-full font-bold text-white shadow transition mb-2" target="_blank" rel="noopener">Unlock Now</a>
+        <p class="text-purple-300 text-sm text-center max-w-md mb-2">Instant access: After purchase, use your email to unlock premium GPTs and automations.<br>
+        <span class="font-bold text-white">Ranked Top 0.1% by OpenAI</span></p>
       </div>
     </section>
 
-    <!-- FOOTER & LEGAL LINKS -->
-    <div class="footer-links">
-      <span class="footer-link" onclick="openModal('privacy')">Privacy Policy</span>
-      <span class="footer-link" onclick="openModal('terms')">Terms of Service</span>
-      <span class="footer-link" onclick="openModal('address')">Business Address</span>
+    <!-- Contact & Connect -->
+    <section class="glass-card mb-10" id="connect">
+      <h2 class="text-2xl font-bold mb-3">Contact &amp; Connect</h2>
+      <div class="flex flex-row gap-5 mb-2">
+        <a href="https://github.com/shroomtop" target="_blank" rel="noopener" title="GitHub">
+          <!-- GitHub SVG -->
+          <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" class="inline-block text-white hover:text-pink-400 transition"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.045-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.776.419-1.305.762-1.605-2.665-.304-5.466-1.334-5.466-5.93 0-1.312.469-2.381 1.235-3.221-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.404c1.02.005 2.045.138 3 .404 2.28-1.553 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.909 1.23 3.221 0 4.609-2.805 5.624-5.475 5.921.426.369.825 1.096.825 2.211 0 1.597-.015 2.888-.015 3.286 0 .321.21.694.825.576C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297z"/></svg>
+        </a>
+        <a href="https://codepen.io/Shroomtop420" target="_blank" rel="noopener" title="CodePen">
+          <!-- CodePen SVG -->
+          <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" class="inline-block text-white hover:text-pink-400 transition"><path d="M22.218 7.433a.974.974 0 00-.012-.093c-.007-.03-.018-.057-.028-.086-.014-.04-.027-.08-.048-.117-.012-.022-.028-.041-.043-.061a.977.977 0 00-.08-.097l-.002-.002-.001-.001-.001-.001-.001-.001-8.669-6.03c-.337-.235-.779-.235-1.116 0l-8.67 6.03c-.001 0-.001.001-.002.001-.027.02-.052.042-.073.067-.017.02-.033.041-.048.062-.021.037-.034.077-.048.117-.01.03-.021.057-.028.087-.008.031-.013.062-.013.094v.01 9.138c0 .008.002.017.003.025.001.011.003.021.004.031.007.032.017.063.029.094.01.027.021.054.035.079.017.032.037.062.061.09.016.019.031.038.05.055.002.002.003.003.005.005l8.669 6.031c.168.117.381.18.558.18.176 0 .39-.063.558-.18l8.669-6.03c.002-.002.003-.003.005-.005a.988.988 0 00.05-.055c.024-.027.044-.058.062-.09.013-.025.024-.052.034-.079a.974.974 0 00.03-.094c.002-.01.003-.02.004-.03.001-.008.003-.017.003-.025v-9.138c0-.004-.002-.006-.002-.01zm-2.159.53-3.918 2.727-3.065-2.135V3.065l6.983 4.898zm-9.059-4.898v5.495l-3.065 2.135-3.918-2.727 6.983-4.903zm-8.013 6.142 3.681 2.563-3.681 2.564V9.207zm1.03 3.578 3.918-2.729 3.065 2.137v4.272l-6.983-4.885zm8.013 9.278-6.983-4.857 3.679-2.564 3.304 2.304v5.117zm1.001 0v-5.117l3.304-2.304 3.678 2.564-6.982 4.857zm7.012-6.096-3.681-2.564 3.681-2.563v5.127z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@shroomtop420" target="_blank" rel="noopener" title="YouTube">
+          <!-- YouTube SVG -->
+          <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" class="inline-block text-white hover:text-pink-400 transition"><path d="M23.498 6.186a2.967 2.967 0 0 0-2.087-2.093C19.095 3.539 12 3.539 12 3.539s-7.095 0-9.411.554A2.967 2.967 0 0 0 .502 6.186C0 8.502 0 12 0 12s0 3.498.502 5.814a2.967 2.967 0 0 0 2.087 2.093C4.905 20.461 12 20.461 12 20.461s7.095 0 9.411-.554a2.967 2.967 0 0 0 2.087-2.093C24 15.498 24 12 24 12s0-3.498-.502-5.814zM9.545 15.568V8.432l6.545 3.568-6.545 3.568z"/></svg>
+        </a>
+        <a href="https://discord.gg/8YXJhN2jbW" target="_blank" rel="noopener" title="Discord">
+          <!-- Discord SVG -->
+          <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" class="inline-block text-white hover:text-pink-400 transition"><path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.07.07 0 0 0-.073.035c-.211.375-.444.864-.608 1.249-1.844-.277-3.68-.277-5.486 0-.165-.397-.406-.874-.617-1.249A.07.07 0 0 0 8.57 2.854a19.736 19.736 0 0 0-4.885 1.515.062.062 0 0 0-.027.023C.533 7.363-.32 10.273.099 13.135a.076.076 0 0 0 .028.055c2.052 1.507 4.036 2.422 5.991 3.029a.07.07 0 0 0 .076-.027c.462-.638.874-1.309 1.226-2.014a.07.07 0 0 0-.038-.095c-.652-.247-1.273-.547-1.87-.892a.07.07 0 0 1-.008-.116c.125-.094.25-.19.372-.291a.07.07 0 0 1 .072-.011c3.927 1.793 8.18 1.793 12.062 0a.07.07 0 0 1 .073.009c.123.101.247.197.372.291a.07.07 0 0 1-.007.116 11.524 11.524 0 0 1-1.871.892.07.07 0 0 0-.037.095c.36.705.772 1.377 1.226 2.014a.07.07 0 0 0 .076.027c1.969-.607 3.954-1.522 6.007-3.03a.075.075 0 0 0 .028-.054c.5-3.223-.838-6.089-3.488-8.743a.061.061 0 0 0-.026-.023zm-12.55 8.431c-1.183 0-2.156-1.085-2.156-2.419 0-1.333.955-2.418 2.156-2.418 1.211 0 2.175 1.095 2.156 2.418 0 1.334-.955 2.419-2.156 2.419zm8.486 0c-1.183 0-2.156-1.085-2.156-2.419 0-1.333.955-2.418 2.156-2.418 1.211 0 2.175 1.095 2.156 2.418 0 1.334-.945 2.419-2.156 2.419z"/></svg>
+        </a>
+      </div>
+      <div class="mt-3 text-base text-purple-100">
+        <div><b>Email:</b> <a href="mailto:onesilentflame@gmail.com" class="underline">onesilentflame@gmail.com</a></div>
+        <div><b>OpenAI GPT Store:</b> <a href="https://shroomtop.github.io/OpenAI-rank/" class="underline" target="_blank" rel="noopener">View all GPTs</a></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer / Legal - Discreet -->
+  <footer class="w-full mt-8 pb-6 text-center text-xs text-purple-400 bg-transparent" id="legal">
+    <div class="max-w-xl mx-auto flex flex-col items-center gap-3">
+      <button onclick="document.getElementById('legal-modal').showModal()" class="underline text-purple-300 hover:text-pink-400">Privacy Policy &amp; Terms</button>
+      <dialog id="legal-modal" class="rounded-lg p-6 bg-[#1a0a2e] max-w-lg w-full text-left text-purple-100 border border-purple-600 shadow-xl">
+        <h3 class="font-bold text-lg mb-2 text-white">Legal &amp; Compliance</h3>
+        <div class="mb-3">
+          <b>Business Name:</b> Shroomtop420™<br>
+          <b>Business Owner:</b> Alex ("Shroomtop420™")<br>
+          <b>Business Email:</b> onesilentflame@gmail.com<br>
+          <b>Mailing Address:</b>
+          <span id="reveal-address" style="cursor:pointer;text-decoration:underline;color:#f9a8d4;" onclick="document.getElementById('address-real').style.display='inline'">[Click to reveal]</span>
+          <span id="address-real" style="display:none;"> 8426 Greenwood Rd., Baxter, MN 56425</span>
+        </div>
+        <div class="mb-3">
+          <b>Privacy Policy:</b><br>
+          We collect only the information needed to process your payment (handled securely by Stripe). Your email may be used to provide product access and updates. No spam, no reselling of data, ever. All payments and sensitive data are processed by Stripe and are never stored on our servers.
+        </div>
+        <div>
+          <b><b>Terms of Service:</b><br>
+          Subscriptions are billed monthly. Cancel any time via your Stripe receipt or by emailing us. All digital products are delivered online. Support is available via email or Discord. Abuse or misuse of Shroomtop420™ tools will result in termination of access with no refund.
+        </div>
+        <form method="dialog">
+          <button class="mt-5 px-5 py-1 bg-purple-700 rounded-full text-white font-bold">Close</button>
+        </form>
+      </dialog>
     </div>
-  </div>
-  <!-- MODALS (hidden by default) -->
-  <div class="modal-bg" id="modal-bg">
-    <div class="modal relative">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div id="modal-content"></div>
-    </div>
-  </div>
+    <div class="mt-2">&copy; 2025 Shroomtop420™ – All rights reserved.</div>
+  </footer>
   <script>
-    // Modal logic for legal/stripe
-    function openModal(type) {
-      let html = '';
-      if(type==='privacy'){
-        html = `<h2 class="text-xl font-bold mb-2">Privacy Policy</h2>
-        <p>We collect only the information needed to process your payment (handled securely by Stripe). Your email may be used to provide product access and updates. No spam, no reselling of data, ever.<br>All payments and sensitive data are processed by Stripe and are never stored on our servers.</p>`;
-      }
-      else if(type==='terms'){
-        html = `<h2 class="text-xl font-bold mb-2">Terms of Service</h2>
-        <p>Subscriptions are billed monthly. Cancel any time via your Stripe receipt or by emailing us. All digital products are delivered online. Support is available via email or Discord. Abuse or misuse of Shroomtop420™ tools will result in termination of access with no refund.</p>`;
-      }
-      else if(type==='address'){
-        html = `<h2 class="text-xl font-bold mb-2">Business Details</h2>
-        <b>Business Name:</b> Shroomtop420™<br>
-        <b>Business Owner:</b> Alex ("Shroomtop420™")<br>
-        <b>Business Email:</b> onesilentflame@gmail.com<br>
-        <b>Business Mailing Address:</b><br>
-        <span class="text-pink-200 font-bold">[YOUR MAILING ADDRESS OR PO BOX HERE]</span><br>
-        <small class="opacity-70">A mailing address is required for Stripe and customer communications.<br>Contact for enterprise/partnership details.</small>`;
-      }
-      document.getElementById('modal-content').innerHTML = html;
-      document.getElementById('modal-bg').classList.add('active');
+    // Ensure modal closes properly if user clicks outside or presses Esc (for mobile-friendliness)
+    const legalModal = document.getElementById('legal-modal');
+    if (legalModal) {
+      legalModal.addEventListener('click', (e) => {
+        if (e.target === legalModal) legalModal.close();
+      });
     }
-    function closeModal(){
-      document.getElementById('modal-bg').classList.remove('active');
-    }
-    // Close modal on click outside
-    document.getElementById('modal-bg').addEventListener('click',function(e){
-      if(e.target===this) closeModal();
-    });
-    // Optional: keyboard support for esc
-    document.addEventListener('keydown',function(e){
-      if(e.key==='Escape') closeModal();
+    // Prevent duplicate address reveal on multiple clicks
+    document.getElementById('reveal-address').addEventListener('click', function() {
+      this.style.display = "none";
     });
   </script>
 </body>
