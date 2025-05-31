@@ -1,0 +1,21 @@
+# HTML/CSS/JS
+node_modules/
+dist/
+build/
+*.log
+.DS_Store
+*.env
+.env.*
+*.local
+*.tmp
+.cache/
+.vscode/
+*.swp
+.idea/
+*.bak
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+coverage/
+*.zip
+*.tar.gz
