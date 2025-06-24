@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shroomtop420™ – Launch, Monetize, and Automate AI-Powered Products</title>
   <meta name="description" content="Shroomtop420™ delivers next-gen automation tools, custom GPTs, and digital assets—engineered for creators, startups, and power users.">
@@ -18,24 +18,15 @@
       min-height: 100vh;
       overflow-x:hidden;
     }
-    .main-container {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 24px 6vw 42px 6vw;
-      position: relative;
-      z-index: 1;
-    }
+    .main-container {max-width: 1024px;margin: 0 auto;padding: 24px 4vw 42px 4vw;position: relative;z-index: 1;}
     .glass-card {
-      background: rgba(44, 18, 56, 0.89);
-      border-radius: 1.5rem;
-      padding: 1.5rem 1.2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 8px 32px #1a0a2e50;
-      border: 1.5px solid rgba(255,255,255,0.09);
+      background: rgba(44,18,56,0.89);border-radius: 1.5rem;padding: 1.5rem 1.2rem;
+      margin-bottom: 2rem;box-shadow: 0 8px 32px #1a0a2e50;border: 1.5px solid rgba(255,255,255,0.09);
     }
-    .featured-icon {
-      width: 38px; height: 38px; display:inline-block; vertical-align:middle; margin-right:0.7rem;
-    }
+    .featured-icon {width: 38px; height: 38px; display:inline-block;vertical-align:middle; margin-right:0.7rem;}
+    .project-grid {display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));}
+    .project-card {transition:transform 0.14s;cursor:pointer;}
+    .project-card:hover {transform:scale(1.028);}
     @media (max-width: 700px) {
       .main-container { padding: 10px 1vw 20vw 1vw; }
       .glass-card { padding: 1rem 0.7rem; }
@@ -43,231 +34,319 @@
   </style>
 </head>
 <body>
-  <nav class="w-full py-4 flex flex-wrap justify-center gap-2 bg-transparent z-10 sticky top-0">
-    <a href="#home" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Home</a>
-    <a href="#about" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">About</a>
-    <a href="#projects" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Projects</a>
-    <a href="#skills" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Skills</a>
-    <a href="#roadmap" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Roadmap</a>
-    <a href="#store" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Store</a>
-    <a href="#connect" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Connect</a>
-    <a href="#legal" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Legal</a>
-  </nav>
-  <main class="main-container pt-6 pb-16">
-    <!-- Hero Section -->
-    <section id="home" class="mb-10 text-center">
-      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">Launch, Monetize, and Automate <span class="text-pink-400">AI-Powered Products</span></h1>
-      <p class="mt-2 text-lg md:text-xl text-purple-200 max-w-2xl mx-auto">
-        The Shroomtop420™ Lab delivers next-gen automation tools, custom GPTs, and digital assets—engineered for creators, startups, and power users.
-      </p>
-      <a href="#store" class="inline-block mt-6 px-8 py-3 text-lg font-bold bg-purple-600 hover:bg-pink-500 rounded-full text-white shadow-md transition">Unlock Premium GPTs</a>
-    </section>
+<nav class="w-full py-4 flex flex-wrap justify-center gap-2 bg-transparent z-10 sticky top-0">
+  <a href="#home" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Home</a>
+  <a href="#about" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">About</a>
+  <a href="#projects" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Projects</a>
+  <a href="#skills" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Skills</a>
+  <a href="#roadmap" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Roadmap</a>
+  <a href="#store" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Store</a>
+  <a href="#connect" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Connect</a>
+  <a href="#legal" class="font-bold text-purple-300 hover:text-white px-4 py-2 rounded-xl transition">Legal</a>
+</nav>
+<main class="main-container pt-6 pb-16">
 
-    <!-- AI, Automation, Monetization Lab -->
-    <section class="glass-card mb-10" id="lab">
-      <div class="mb-2">
-        <span class="inline-block bg-pink-500 text-white px-3 py-1 rounded-full font-bold text-xs mb-2">Ranked Top 0.1% by OpenAI</span>
+  <!-- HERO -->
+  <section id="home" class="mb-10 text-center">
+    <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">Launch, Monetize, and Automate <span class="text-pink-400">AI-Powered Products</span></h1>
+    <p class="mt-2 text-lg md:text-xl text-purple-200 max-w-2xl mx-auto">
+      The Shroomtop420™ Lab delivers next-gen automation tools, custom GPTs, and digital assets—engineered for creators, startups, and power users.
+    </p>
+    <a href="#store" class="inline-block mt-6 px-8 py-3 text-lg font-bold bg-purple-600 hover:bg-pink-500 rounded-full text-white shadow-md transition">Unlock Premium GPTs</a>
+  </section>
+
+  <!-- LAB SNAPSHOT -->
+  <section class="glass-card mb-10" id="lab">
+    <div class="mb-2"><span class="inline-block bg-pink-500 text-white px-3 py-1 rounded-full font-bold text-xs mb-2">Ranked Top 0.1% by OpenAI</span></div>
+    <h2 class="text-2xl font-bold mb-2">AI, Automation & Monetization Lab</h2>
+    <ul class="list-disc ml-6 text-base text-purple-100 space-y-1">
+      <li>Building antifragile, self-improving code products.</li>
+      <li>Mobile-first workflow (develop & deploy from Android + Termux).</li>
+      <li>100+ GPTs launched · Stripe-powered paywalls.</li>
+      <li>Stacks: HTML5, ES6, Tailwind, Three.js, Flask, GitHub, Stripe.</li>
+    </ul>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="glass-card mb-10" id="about">
+    <h2 class="text-2xl font-bold mb-3">About Shroomtop420™</h2>
+    <p class="mb-3 text-base">
+      Hi, I’m Alex (“Shroomtop420™”). My journey began as a gamer and hacker, driven by curiosity and a love for building. After overcoming personal adversity, I reinvented myself as a mobile-first engineer—turning obsession into a brand that ships code which <i>earns, scales & improves itself</i>.
+    </p>
+    <ul class="list-disc ml-6 text-purple-100 space-y-1">
+      <li>170+ custom GPTs and AI agents built</li>
+      <li>Mastery of automation, zero-dep web apps, and prompt engineering</li>
+      <li>Product launches on Stripe, GitHub, and the OpenAI GPT Store</li>
+      <li>Recognized in the top 0.1% of AI prompt engineers worldwide</li>
+    </ul>
+  </section>
+
+  <!-- PROJECT DIRECTORY (AUTO-GENERATED) -->
+  <section class="mb-12" id="projects">
+    <h2 class="text-2xl font-bold mb-4">Project & Product Directory</h2>
+    <div class="project-grid">
+      <!-- Project Cards, copy and extend below as needed. Each card: icon/title/desc/link(s) -->
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">2-Player ChatGPT</h3>
+        <div class="text-base mb-2">Collaborative prompt & response. Two users, live side-by-side conversation with AI guidance.</div>
+        <a href="https://shroomtop.github.io/2player-chatgpt/" class="underline text-sky-300" target="_blank" rel="noopener">Open 2-Player ChatGPT</a>
       </div>
-      <h2 class="text-2xl font-bold mb-2">AI, Automation & Monetization Lab</h2>
-      <ul class="list-disc ml-6 text-base text-purple-100 space-y-1">
-        <li>Building antifragile, self-improving code products.</li>
-        <li>Mobile-first workflow (develop & deploy from Android + Termux).</li>
-        <li>100+ GPTs launched · Stripe-powered paywalls.</li>
-        <li>Stacks: HTML5, ES6, Tailwind, Three.js, Flask, GitHub, Stripe.</li>
-      </ul>
-    </section>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">420 Prompt Engine</h3>
+        <div class="text-base mb-2">Original Shroomtop420™ fun prompt system: unique Q&A/AI games & experimentation playground.</div>
+        <a href="https://shroomtop.github.io/420/" class="underline text-sky-300" target="_blank" rel="noopener">Try 420 Prompt Engine</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">Blind Spot Expander</h3>
+        <div class="text-base mb-2">Uncover personal or business blind spots via rapid AI-powered feedback loops.</div>
+        <a href="https://shroomtop.github.io/Blind-spot-expander/" class="underline text-sky-300" target="_blank" rel="noopener">Expand Your Blind Spots</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">Brand Kit Generator</h3>
+        <div class="text-base mb-2">Auto-create visual brand kits, style guides, and branding assets—zero design skills needed.</div>
+        <a href="https://shroomtop.github.io/Brand-kit/" class="underline text-sky-300" target="_blank" rel="noopener">Get a Brand Kit</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">Buy BTC UI</h3>
+        <div class="text-base mb-2">Simple, secure front-end for buying Bitcoin via Stripe integration (demo flow).</div>
+        <a href="https://shroomtop.github.io/Buy-BTC/" class="underline text-sky-300" target="_blank" rel="noopener">Buy BTC Demo</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">Char Count Utility</h3>
+        <div class="text-base mb-2">Lightning-fast character & word counter. Paste, count, copy. Built for prompt engineers.</div>
+        <a href="https://shroomtop.github.io/Char-Count/" class="underline text-sky-300" target="_blank" rel="noopener">Count Now</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">ChatGPT Prompt Standalone</h3>
+        <div class="text-base mb-2">Self-contained prompt engineering studio for offline or browser use.</div>
+        <a href="https://shroomtop.github.io/ChatGPT-Prompts-standalone/" class="underline text-sky-300" target="_blank" rel="noopener">Open Studio</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">ChatGPT Conversations Tracker</h3>
+        <div class="text-base mb-2">Archive, search, and analyze your ChatGPT sessions with JSON exports and visualization.</div>
+        <a href="https://shroomtop.github.io/Chatgpt-conversations.json/" class="underline text-sky-300" target="_blank" rel="noopener">Open Tracker</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">Cheesy Potatoes Recipe Generator</h3>
+        <div class="text-base mb-2">AI-powered comfort food: generate and remix cheesy potato recipes for any diet or taste.</div>
+        <a href="https://shroomtop.github.io/Cheesey-potatoes/" class="underline text-sky-300" target="_blank" rel="noopener">Cook Cheesy Potatoes</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">ChristianGPT</h3>
+        <div class="text-base mb-2">Faith-based GPT agent for positive, Christian-focused Q&A, reflection, and support.</div>
+        <a href="https://shroomtop.github.io/ChristianGPT/" class="underline text-sky-300" target="_blank" rel="noopener">Open ChristianGPT</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">DDWC Prep Tool</h3>
+        <div class="text-base mb-2">Prepare, strategize, and optimize for DDWC events—AI-powered checklists and workflows.</div>
+        <a href="https://shroomtop.github.io/DDWC-PREP/" class="underline text-sky-300" target="_blank" rel="noopener">Use DDWC Prep</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">Deep Research Engine</h3>
+        <div class="text-base mb-2">Turn any topic into an exhaustive, sourced research dossier in minutes.</div>
+        <a href="https://shroomtop.github.io/Deep-Research/" class="underline text-sky-300" target="_blank" rel="noopener">Deep Research Now</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">Files to Prompt Converter</h3>
+        <div class="text-base mb-2">Transform documents, images, and code files into ChatGPT-ready prompt strings.</div>
+        <a href="https://shroomtop.github.io/Files-to-prompt/" class="underline text-sky-300" target="_blank" rel="noopener">Convert Files</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">GPT Action List</h3>
+        <div class="text-base mb-2">Auto-generate actionable task lists for projects, goals, or brainstorms with AI.</div>
+        <a href="https://shroomtop.github.io/GPT-Action-list/" class="underline text-sky-300" target="_blank" rel="noopener">Create Action List</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">GPT Creation Guide</h3>
+        <div class="text-base mb-2">Step-by-step guide to creating, launching, and optimizing GPTs for the marketplace.</div>
+        <a href="https://shroomtop.github.io/GPT-Creation-Guide/" class="underline text-sky-300" target="_blank" rel="noopener">Open Guide</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">GitHub Shortcuts UI</h3>
+        <div class="text-base mb-2">Handy UI for all must-know Git and GitHub CLI shortcuts. Learn, copy, master the stack.</div>
+        <a href="https://shroomtop.github.io/Github-shortcuts/" class="underline text-sky-300" target="_blank" rel="noopener">Open Shortcuts UI</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">GPT Directory & Product Hub</h3>
+        <div class="text-base mb-2">Browse, filter, and access 100+ AI tools from the Shroomtop420™ portfolio.</div>
+        <a href="https://shroomtop.github.io/Gpts/" class="underline text-sky-300" target="_blank" rel="noopener">Enter Hub</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">Graph Builder</h3>
+        <div class="text-base mb-2">Interactive graph builder for rapid data, relationship, or prompt structure modeling.</div>
+        <a href="https://shroomtop.github.io/Graph-Builder/" class="underline text-sky-300" target="_blank" rel="noopener">Open Graph Builder</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">Analytics Dashboard</h3>
+        <div class="text-base mb-2">Track, analyze, and visualize usage data across all Shroomtop420™ tools and GPTs.</div>
+        <a href="https://shroomtop.github.io/analytics/" class="underline text-sky-300" target="_blank" rel="noopener">Open Analytics</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">Automate Pinterest</h3>
+        <div class="text-base mb-2">AI automation suite for bulk pin uploads, content scheduling, and analytics.</div>
+        <a href="https://shroomtop.github.io/automate-pinterest/" class="underline text-sky-300" target="_blank" rel="noopener">Automate Pinterest</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">Blog (AI/Automation/DevOps)</h3>
+        <div class="text-base mb-2">Insights, deep dives, and strategic guides on prompt engineering and antifragile product dev.</div>
+        <a href="https://shroomtop.github.io/blog/" class="underline text-sky-300" target="_blank" rel="noopener">Read Blog</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">ChatGPT Prompting Journey</h3>
+        <div class="text-base mb-2">Documented prompt engineering progression—how to go from beginner to expert, with benchmarks.</div>
+        <a href="https://shroomtop.github.io/chatgpt-prompting-journey/" class="underline text-sky-300" target="_blank" rel="noopener">Explore Journey</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">CodePen Portfolio Mirror</h3>
+        <div class="text-base mb-2">Live sync and browse your Shroomtop420™ CodePen portfolio and embedded pens.</div>
+        <a href="https://shroomtop.github.io/codepen/" class="underline text-sky-300" target="_blank" rel="noopener">Browse CodePen</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">Deep Search Engine</h3>
+        <div class="text-base mb-2">Advanced search tool: semantic, context, and keyword for any dataset or site.</div>
+        <a href="https://shroomtop.github.io/deep-search/" class="underline text-sky-300" target="_blank" rel="noopener">Deep Search</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">Git Command Builder UI</h3>
+        <div class="text-base mb-2">Visual tool to build and copy-paste git commands for any workflow scenario.</div>
+        <a href="https://shroomtop.github.io/git-command-builder-ui/" class="underline text-sky-300" target="_blank" rel="noopener">Open Builder</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">GitHub Security Dashboard</h3>
+        <div class="text-base mb-2">Harden and audit your repos: key checks, settings, alerts, and compliance.</div>
+        <a href="https://shroomtop.github.io/github-security/" class="underline text-sky-300" target="_blank" rel="noopener">Audit Security</a>
+      </div>
+      <div class="glass-card project-card">
+        <h3 class="font-bold text-lg mb-1">GPT Repo Updater UI</h3>
+        <div class="text-base mb-2">Automate bulk repo updates: drag, drop, and push new GPTs or docs in seconds.</div>
+        <a href="https://shroomtop.github.io/gpt-repo-updater-ui/" class="underline text-sky-300" target="_blank" rel="noopener">Update Repos</a>
+      </div>
+      <!-- =========== END OF LIST =========== -->
+    </div>
+  </section>
 
-    <!-- About -->
-    <section class="glass-card mb-10" id="about">
-      <h2 class="text-2xl font-bold mb-3">About Shroomtop420™</h2>
-      <p class="mb-3 text-base">
-        Hi, I’m Alex (“Shroomtop420™”). My journey began as a gamer and hacker, driven by curiosity and a love for building. After overcoming personal adversity, I reinvented myself as a mobile-first engineer—turning obsession into a brand that ships code which <i>earns, scales & improves itself</i>.
-      </p>
-      <ul class="list-disc ml-6 text-purple-100 space-y-1">
-        <li>170+ custom GPTs and AI agents built</li>
-        <li>Mastery of automation, zero-dep web apps, and prompt engineering</li>
-        <li>Product launches on Stripe, GitHub, and the OpenAI GPT Store</li>
-        <li>Recognized in the top 0.1% of AI prompt engineers worldwide</li>
-      </ul>
-    </section>
-<!-- ...existing head and nav code stays the same... -->
+  <!-- SKILLS SNAPSHOT -->
+  <section class="glass-card mb-10" id="skills">
+    <h2 class="text-2xl font-bold mb-3">Skills Snapshot</h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full text-left text-base text-purple-100 border-separate" style="border-spacing:0 0.6rem;">
+        <thead>
+          <tr>
+            <th class="pr-4 pb-2 text-purple-300 font-bold">Domain</th>
+            <th class="pr-4 pb-2 text-purple-300 font-bold">Percentile</th>
+            <th class="pr-4 pb-2 text-purple-300 font-bold">Highlights</th>
+            <th class="pb-2 text-purple-300 font-bold">Next Focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pr-4 font-semibold">Prompt Engineering</td>
+            <td class="pr-4">95%</td>
+            <td class="pr-4">170+ GPTs, meta-prompts, automation</td>
+            <td>Fine-tuning &amp; reliability</td>
+          </tr>
+          <tr>
+            <td class="pr-4 font-semibold">Frontend Dev</td>
+            <td class="pr-4">90%</td>
+            <td class="pr-4">Zero-dep webapps, 3D/Canvas, PWA</td>
+            <td>Large-scale SPAs, a11y</td>
+          </tr>
+          <tr>
+            <td class="pr-4 font-semibold">Backend/API</td>
+            <td class="pr-4">60%</td>
+            <td class="pr-4">Node, Flask, DB basics</td>
+            <td>Scaling &amp; auth</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-<!-- Featured Projects -->
-<section class="mb-12" id="projects">
-  <h2 class="text-2xl font-bold mb-4">Featured Projects</h2>
-  <div class="grid md:grid-cols-3 gap-5">
-    <!-- Project 1 -->
-    <div class="glass-card flex flex-col h-full">
-      <span class="featured-icon mb-2">
-        <!-- Official CodePen SVG (unchanged) -->
-        <svg viewBox="0 0 24 24" width="38" height="38" fill="currentColor" aria-label="CodePen" class="text-white/90">
-          <path d="M22.218 7.433a.974.974 0 00-.012-.093c-.007-.03-.018-.057-.028-.086-.014-.04-.027-.08-.048-.117-.012-.022-.028-.041-.043-.061a.977.977 0 00-.08-.097l-.002-.002-.001-.001-.001-.001-.001-.001-8.669-6.03c-.337-.235-.779-.235-1.116 0l-8.67 6.03c-.001 0-.001.001-.002.001-.027.02-.052.042-.073.067-.017.02-.033.041-.048.062-.021.037-.034.077-.048.117-.01.03-.021.057-.028.087-.008.031-.013.062-.013.094v.01 9.138c0 .008.002.017.003.025.001.011.003.021.004.031.007.032.017.063.029.094.01.027.021.054.035.079.017.032.037.062.061.09.016.019.031.038.05.055.002.002.003.003.005.005l8.669 6.031c.168.117.381.18.558.18.176 0 .39-.063.558-.18l8.669-6.03c.002-.002.003-.003.005-.005a.988.988 0 00.05-.055c.024-.027.044-.058.062-.09.013-.025.024-.052.034-.079a.974.974 0 00.03-.094c.002-.01.003-.02.004-.03.001-.008.003-.017.003-.025v-9.138c0-.004-.002-.006-.002-.01zm-2.159.53-3.918 2.727-3.065-2.135V3.065l6.983 4.898zm-9.059-4.898v5.495l-3.065 2.135-3.918-2.727 6.983-4.903zm-8.013 6.142 3.681 2.563-3.681 2.564V9.207zm1.03 3.578 3.918-2.729 3.065 2.137v4.272l-6.983-4.885zm8.013 9.278-6.983-4.857 3.679-2.564 3.304 2.304v5.117zm1.001 0v-5.117l3.304-2.304 3.678 2.564-6.982 4.857zm7.012-6.096-3.681-2.564 3.681-2.563v5.127z"/>
-        </svg>
-      </span>
-      <h3 class="font-bold text-lg mb-1">Prompt Generator</h3>
-      <div class="text-base mb-2">Instantly generate advanced prompts for any use-case. Fully customizable & monetized.</div>
-      <a href="https://shroomtop.github.io/Prompt-generator/" class="underline text-sky-300" target="_blank" rel="noopener">Live Demo</a>
+  <!-- ROADMAP -->
+  <section class="glass-card mb-10" id="roadmap">
+    <h2 class="text-2xl font-bold mb-3">Roadmap 2025</h2>
+    <ul class="list-disc ml-6 text-purple-100 space-y-1 mb-2">
+      <li><b>Q2–Q3:</b> Launch full Stripe license engine, GitHub monetization layer.</li>
+      <li><b>Q4:</b> Profit Surface Visualizer, PWA app-suite, white-label tool line.</li>
+    </ul>
+    <div class="text-sm text-purple-300">
+      <b>Upcoming Builds</b>
+      <ul class="list-disc ml-6">
+        <li>Prompt Licensing Toolkit v3</li>
+        <li>GPT Marketplace / Directory</li>
+        <li>Self-updating code products</li>
+      </ul>
     </div>
-    <!-- Project 2 -->
-    <div class="glass-card flex flex-col h-full">
-      <span class="featured-icon mb-2">
-        <svg viewBox="0 0 24 24" width="38" height="38" fill="currentColor" aria-label="CodePen" class="text-white/90">
-          <path d="M22.218 7.433a.974.974 0 00-.012-.093c-.007-.03-.018-.057-.028-.086-.014-.04-.027-.08-.048-.117-.012-.022-.028-.041-.043-.061a.977.977 0 00-.08-.097l-.002-.002-.001-.001-.001-.001-.001-.001-8.669-6.03c-.337-.235-.779-.235-1.116 0l-8.67 6.03c-.001 0-.001.001-.002.001-.027.02-.052.042-.073.067-.017.02-.033.041-.048.062-.021.037-.034.077-.048.117-.01.03-.021.057-.028.087-.008.031-.013.062-.013.094v.01 9.138c0 .008.002.017.003.025.001.011.003.021.004.031.007.032.017.063.029.094.01.027.021.054.035.079.017.032.037.062.061.09.016.019.031.038.05.055.002.002.003.003.005.005l8.669 6.031c.168.117.381.18.558.18.176 0 .39-.063.558-.18l8.669-6.03c.002-.002.003-.003.005-.005a.988.988 0 00.05-.055c.024-.027.044-.058.062-.09.013-.025.024-.052.034-.079a.974.974 0 00.03-.094c.002-.01.003-.02.004-.03.001-.008.003-.017.003-.025v-9.138c0-.004-.002-.006-.002-.01zm-2.159.53-3.918 2.727-3.065-2.135V3.065l6.983 4.898zm-9.059-4.898v5.495l-3.065 2.135-3.918-2.727 6.983-4.903zm-8.013 6.142 3.681 2.563-3.681 2.564V9.207zm1.03 3.578 3.918-2.729 3.065 2.137v4.272l-6.983-4.885zm8.013 9.278-6.983-4.857 3.679-2.564 3.304 2.304v5.117zm1.001 0v-5.117l3.304-2.304 3.678 2.564-6.982 4.857zm7.012-6.096-3.681-2.564 3.681-2.563v5.127z"/>
-        </svg>
-      </span>
-      <h3 class="font-bold text-lg mb-1">ChatGPT Conversations Tracker</h3>
-      <div class="text-base mb-2">Archive, search, and analyze your ChatGPT sessions with JSON exports and visualization.</div>
-      <a href="https://shroomtop.github.io/Chatgpt-conversations.json/" class="underline text-sky-300" target="_blank" rel="noopener">Open Tracker</a>
+  </section>
+
+  <!-- STORE -->
+  <section class="glass-card mb-10" id="store">
+    <h2 class="text-2xl font-bold mb-3">Shroomtop420™ Store</h2>
+    <div class="flex flex-col items-center">
+      <img src="https://shroomtop.github.io/OpenAI-rank/assets/allgpts.png" alt="All GPTs Access" class="rounded-xl mb-3 w-full max-w-xs" loading="lazy"/>
+      <p class="text-lg mb-1 font-semibold text-white">All Premium GPTs – <span class="text-pink-400 font-bold">$15/mo</span></p>
+      <a href="https://buy.stripe.com/aFa6oHeG74DQ8ZB3LubQY01" class="inline-block px-7 py-2 bg-pink-600 hover:bg-pink-700 rounded-full font-bold text-white shadow transition mb-2" target="_blank" rel="noopener">Unlock Now</a>
+      <p class="text-purple-300 text-sm text-center max-w-md mb-2">Instant access: After purchase, use your email to unlock premium GPTs and automations.<br>
+      <span class="font-bold text-white">Ranked Top 0.1% by OpenAI</span></p>
     </div>
-    <!-- Project 3 -->
-    <div class="glass-card flex flex-col h-full">
-      <span class="featured-icon mb-2">
-        <svg viewBox="0 0 24 24" width="38" height="38" fill="currentColor" aria-label="CodePen" class="text-white/90">
-          <path d="M22.218 7.433a.974.974 0 00-.012-.093c-.007-.03-.018-.057-.028-.086-.014-.04-.027-.08-.048-.117-.012-.022-.028-.041-.043-.061a.977.977 0 00-.08-.097l-.002-.002-.001-.001-.001-.001-.001-.001-8.669-6.03c-.337-.235-.779-.235-1.116 0l-8.67 6.03c-.001 0-.001.001-.002.001-.027.02-.052.042-.073.067-.017.02-.033.041-.048.062-.021.037-.034.077-.048.117-.01.03-.021.057-.028.087-.008.031-.013.062-.013.094v.01 9.138c0 .008.002.017.003.025.001.011.003.021.004.031.007.032.017.063.029.094.01.027.021.054.035.079.017.032.037.062.061.09.016.019.031.038.05.055.002.002.003.003.005.005l8.669 6.031c.168.117.381.18.558.18.176 0 .39-.063.558-.18l8.669-6.03c.002-.002.003-.003.005-.005a.988.988 0 00.05-.055c.024-.027.044-.058.062-.09.013-.025.024-.052.034-.079a.974.974 0 00.03-.094c.002-.01.003-.02.004-.03.001-.008.003-.017.003-.025v-9.138c0-.004-.002-.006-.002-.01zm-2.159.53-3.918 2.727-3.065-2.135V3.065l6.983 4.898zm-9.059-4.898v5.495l-3.065 2.135-3.918-2.727 6.983-4.903zm-8.013 6.142 3.681 2.563-3.681 2.564V9.207zm1.03 3.578 3.918-2.729 3.065 2.137v4.272l-6.983-4.885zm8.013 9.278-6.983-4.857 3.679-2.564 3.304 2.304v5.117zm1.001 0v-5.117l3.304-2.304 3.678 2.564-6.982 4.857zm7.012-6.096-3.681-2.564 3.681-2.563v5.127z"/>
-        </svg>
-      </span>
-      <h3 class="font-bold text-lg mb-1">GPT Directory & Product Hub</h3>
-      <div class="text-base mb-2">Browse, filter, and access 100+ AI tools from the Shroomtop420™ portfolio.</div>
-      <a href="https://shroomtop.github.io/Gpts/" class="underline text-sky-300" target="_blank" rel="noopener">Enter Hub</a>
+  </section>
+
+  <!-- CONNECT -->
+  <section class="glass-card mb-10" id="connect">
+    <h2 class="text-2xl font-bold mb-3">Contact &amp; Connect</h2>
+    <div class="flex flex-row gap-5 mb-2">
+      <a href="https://github.com/shroomtop" target="_blank" rel="noopener" title="GitHub"><!-- GitHub SVG --><svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" class="inline-block text-white hover:text-pink-400 transition"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.045-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.776.419-1.305.762-1.605-2.665-.304-5.466-1.334-5.466-5.93 0-1.312.469-2.381 1.235-3.221-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.404c1.02.005 2.045.138 3 .404 2.28-1.553 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.909 1.23 3.221 0 4.609-2.805 5.624-5.475 5.921.426.369.825 1.096.825 2.211 0 1.597-.015 2.888-.015 3.286 0 .321.21.694.825.576C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297z"/></svg></a>
+      <a href="https://codepen.io/Shroomtop420" target="_blank" rel="noopener" title="CodePen"><!-- CodePen SVG --><svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" class="inline-block text-white hover:text-pink-400 transition"><path d="M22.218 7.433a.974.974 0 00-.012-.093c-.007-.03-.018-.057-.028-.086-.014-.04-.027-.08-.048-.117-.012-.022-.028-.041-.043-.061a.977.977 0 00-.08-.097l-.002-.002-.001-.001-.001-.001-.001-.001-8.669-6.03c-.337-.235-.779-.235-1.116 0l-8.67 6.03c-.001 0-.001.001-.002.001-.027.02-.052.042-.073.067-.017.02-.033.041-.048.062-.021.037-.034.077-.048.117-.01.03-.021.057-.028.087-.008.031-.013.062-.013.094v.01 9.138c0 .008.002.017.003.025.001.011.003.021.004.031.007.032.017.063.029.094.01.027.021.054.035.079.017.032.037.062.061.09.016.019.031.038.05.055.002.002.003.003.005.005l8.669 6.031c.168.117.381.18.558.18.176 0 .39-.063.558-.18l8.669-6.03c.002-.002.003-.003.005-.005a.988.988 0 00.05-.055c.024-.027.044-.058.062-.09.013-.025.024-.052.034-.079a.974.974 0 00.03-.094c.002-.01.003-.02.004-.03.001-.008.003-.017.003-.025v-9.138c0-.004-.002-.006-.002-.01zm-2.159.53-3.918 2.727-3.065-2.135V3.065l6.983 4.898zm-9.059-4.898v5.495l-3.065 2.135-3.918-2.727 6.983-4.903zm-8.013 6.142 3.681 2.563-3.681 2.564V9.207zm1.03 3.578 3.918-2.729 3.065 2.137v4.272l-6.983-4.885zm8.013 9.278-6.983-4.857 3.679-2.564 3.304 2.304v5.117zm1.001 0v-5.117l3.304-2.304 3.678 2.564-6.982 4.857zm7.012-6.096-3.681-2.564 3.681-2.563v5.127z"/></svg></a>
+      <a href="https://www.youtube.com/@shroomtop420" target="_blank" rel="noopener" title="YouTube"><!-- YouTube SVG --><svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" class="inline-block text-white hover:text-pink-400 transition"><path d="M23.498 6.186a2.967 2.967 0 0 0-2.087-2.093C19.095 3.539 12 3.539 12 3.539s-7.095 0-9.411.554A2.967 2.967 0 0 0 .502 6.186C0 8.502 0 12 0 12s0 3.498.502 5.814a2.967 2.967 0 0 0 2.087 2.093C4.905 20.461 12 20.461 12 20.461s7.095 0 9.411-.554a2.967 2.967 0 0 0 2.087-2.093C24 15.498 24 12 24 12s0-3.498-.502-5.814zM9.545 15.568V8.432l6.545 3.568-6.545 3.568z"/></svg></a>
+      <a href="https://discord.gg/8YXJhN2jbW" target="_blank" rel="noopener" title="Discord"><!-- Discord SVG --><svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" class="inline-block text-white hover:text-pink-400 transition"><path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.07.07 0 0 0-.073.035c-.211.375-.444.864-.608 1.249-1.844-.277-3.68-.277-5.486 0-.165-.397-.406-.874-.617-1.249A.07.07 0 0 0 8.57 2.854a19.736 19.736 0 0 0-4.885 1.515.062.062 0 0 0-.027.023C.533 7.363-.32 10.273.099 13.135a.076.076 0 0 0 .028.055c2.052 1.507 4.036 2.422 5.991 3.029a.07.07 0 0 0 .076-.027c.462-.638.874-1.309 1.226-2.014a.07.07 0 0 0-.038-.095c-.652-.247-1.273-.547-1.87-.892a.07.07 0 0 1-.008-.116c.125-.094.25-.19.372-.291a.07.07 0 0 1 .072-.011c3.927 1.793 8.18 1.793 12.062 0a.07.07 0 0 1 .073.009c.123.101.247.197.372.291a.07.07 0 0 1-.007.116 11.524 11.524 0 0 1-1.871.892.07.07 0 0 0-.037.095c.36.705.772 1.377 1.226 2.014a.07.07 0 0 0 .076.027c1.969-.607 3.954-1.522 6.007-3.03a.075.075 0 0 0 .028-.054c.5-3.223-.838-6.089-3.488-8.743a.061.061 0 0 0-.026-.023zm-12.55 8.431c-1.183 0-2.156-1.085-2.156-2.419 0-1.333.955-2.418 2.156-2.418 1.211 0 2.175 1.095 2.156 2.418 0 1.334-.955 2.419-2.156 2.419zm8.486 0c-1.183 0-2.156-1.085-2.156-2.419 0-1.333.955-2.418 2.156-2.418 1.211 0 2.175 1.095 2.156 2.418 0 1.334-.945 2.419-2.156 2.419z"/></svg></a>
     </div>
+    <div class="mt-3 text-base text-purple-100">
+      <div><b>Email:</b> <a href="mailto:onesilentflame@gmail.com" class="underline">onesilentflame@gmail.com</</a></div>
+      <div><b>OpenAI GPT Store:</b> <a href="https://shroomtop.github.io/OpenAI-rank/" class="underline" target="_blank" rel="noopener">View all GPTs</a></div>
+    </div>
+  </section>
+</main>
+<!-- Footer / Legal - Discreet -->
+<footer class="w-full mt-8 pb-6 text-center text-xs text-purple-400 bg-transparent" id="legal">
+  <div class="max-w-xl mx-auto flex flex-col items-center gap-3">
+    <button onclick="document.getElementById('legal-modal').showModal()" class="underline text-purple-300 hover:text-pink-400">Privacy Policy &amp; Terms</button>
+    <dialog id="legal-modal" class="rounded-lg p-6 bg-[#1a0a2e] max-w-lg w-full text-left text-purple-100 border border-purple-600 shadow-xl">
+      <h3 class="font-bold text-lg mb-2 text-white">Legal &amp; Compliance</h3>
+      <div class="mb-3">
+        <b>Business Name:</b> Shroomtop420™<br>
+        <b>Business Owner:</b> Alex ("Shroomtop420™")<br>
+        <b>Business Email:</b> onesilentflame@gmail.com<br>
+        <b>Mailing Address:</b>
+        <span id="reveal-address" style="cursor:pointer;text-decoration:underline;color:#f9a8d4;" onclick="document.getElementById('address-real').style.display='inline'">[Click to reveal]</span>
+        <span id="address-real" style="display:none;"> 8426 Greenwood Rd., Baxter, MN 56425</span>
+      </div>
+      <div class="mb-3">
+        <b>Privacy Policy:</b><br>
+        We collect only the information needed to process your payment (handled securely by Stripe). Your email may be used to provide product access and updates. No spam, no reselling of data, ever. All payments and sensitive data are processed by Stripe and are never stored on our servers.
+      </div>
+      <div>
+        <b>Terms of Service:</b><br>
+        Subscriptions are billed monthly. Cancel any time via your Stripe receipt or by emailing us. All digital products are delivered online. Support is available via email or Discord. Abuse or misuse of Shroomtop420™ tools will result in termination of access with no refund.
+      </div>
+      <form method="dialog">
+        <button class="mt-5 px-5 py-1 bg-purple-700 rounded-full text-white font-bold">Close</button>
+      </form>
+    </dialog>
   </div>
-</section>
-   
-    <!-- Skills Snapshot -->
-    <section class="glass-card mb-10" id="skills">
-      <h2 class="text-2xl font-bold mb-3">Skills Snapshot</h2>
-      <div class="overflow-x-auto">
-        <table class="min-w-full text-left text-base text-purple-100 border-separate" style="border-spacing:0 0.6rem;">
-          <thead>
-            <tr>
-              <th class="pr-4 pb-2 text-purple-300 font-bold">Domain</th>
-              <th class="pr-4 pb-2 text-purple-300 font-bold">Percentile</th>
-              <th class="pr-4 pb-2 text-purple-300 font-bold">Highlights</th>
-              <th class="pb-2 text-purple-300 font-bold">Next Focus</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="pr-4 font-semibold">Prompt Engineering</td>
-              <td class="pr-4">95%</td>
-              <td class="pr-4">170+ GPTs, meta-prompts, automation</td>
-              <td>Fine-tuning &amp; reliability</td>
-            </tr>
-            <tr>
-              <td class="pr-4 font-semibold">Frontend Dev</td>
-              <td class="pr-4">90%</td>
-              <td class="pr-4">Zero-dep webapps, 3D/Canvas, PWA</td>
-              <td>Large-scale SPAs, a11y</td>
-            </tr>
-            <tr>
-              <td class="pr-4 font-semibold">Backend/API</td>
-              <td class="pr-4">60%</td>
-              <td class="pr-4">Node, Flask, DB basics</td>
-              <td>Scaling &amp; auth</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Roadmap 2025 -->
-    <section class="glass-card mb-10" id="roadmap">
-      <h2 class="text-2xl font-bold mb-3">Roadmap 2025</h2>
-      <ul class="list-disc ml-6 text-purple-100 space-y-1 mb-2">
-        <li><b>Q2–Q3:</b> Launch full Stripe license engine, GitHub monetization layer.</li>
-        <li><b>Q4:</b> Profit Surface Visualizer, PWA app-suite, white-label tool line.</li>
-      </ul>
-      <div class="text-sm text-purple-300">
-        <b>Upcoming Builds</b>
-        <ul class="list-disc ml-6">
-          <li>Prompt Licensing Toolkit v3</li>
-          <li>GPT Marketplace / Directory</li>
-          <li>Self-updating code products</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Store -->
-    <section class="glass-card mb-10" id="store">
-      <h2 class="text-2xl font-bold mb-3">Shroomtop420™ Store</h2>
-      <div class="flex flex-col items-center">
-        <img src="https://shroomtop.github.io/OpenAI-rank/assets/allgpts.png" alt="All GPTs Access" class="rounded-xl mb-3 w-full max-w-xs" loading="lazy"/>
-        <p class="text-lg mb-1 font-semibold text-white">All Premium GPTs – <span class="text-pink-400 font-bold">$15/mo</span></p>
-        <a href="https://buy.stripe.com/aFa6oHeG74DQ8ZB3LubQY01" class="inline-block px-7 py-2 bg-pink-600 hover:bg-pink-700 rounded-full font-bold text-white shadow transition mb-2" target="_blank" rel="noopener">Unlock Now</a>
-        <p class="text-purple-300 text-sm text-center max-w-md mb-2">Instant access: After purchase, use your email to unlock premium GPTs and automations.<br>
-        <span class="font-bold text-white">Ranked Top 0.1% by OpenAI</span></p>
-      </div>
-    </section>
-
-    <!-- Contact & Connect -->
-    <section class="glass-card mb-10" id="connect">
-      <h2 class="text-2xl font-bold mb-3">Contact &amp; Connect</h2>
-      <div class="flex flex-row gap-5 mb-2">
-        <a href="https://github.com/shroomtop" target="_blank" rel="noopener" title="GitHub">
-          <!-- GitHub SVG -->
-          <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" class="inline-block text-white hover:text-pink-400 transition"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.045-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.776.419-1.305.762-1.605-2.665-.304-5.466-1.334-5.466-5.93 0-1.312.469-2.381 1.235-3.221-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.404c1.02.005 2.045.138 3 .404 2.28-1.553 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.909 1.23 3.221 0 4.609-2.805 5.624-5.475 5.921.426.369.825 1.096.825 2.211 0 1.597-.015 2.888-.015 3.286 0 .321.21.694.825.576C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297z"/></svg>
-        </a>
-        <a href="https://codepen.io/Shroomtop420" target="_blank" rel="noopener" title="CodePen">
-          <!-- CodePen SVG -->
-          <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" class="inline-block text-white hover:text-pink-400 transition"><path d="M22.218 7.433a.974.974 0 00-.012-.093c-.007-.03-.018-.057-.028-.086-.014-.04-.027-.08-.048-.117-.012-.022-.028-.041-.043-.061a.977.977 0 00-.08-.097l-.002-.002-.001-.001-.001-.001-.001-.001-8.669-6.03c-.337-.235-.779-.235-1.116 0l-8.67 6.03c-.001 0-.001.001-.002.001-.027.02-.052.042-.073.067-.017.02-.033.041-.048.062-.021.037-.034.077-.048.117-.01.03-.021.057-.028.087-.008.031-.013.062-.013.094v.01 9.138c0 .008.002.017.003.025.001.011.003.021.004.031.007.032.017.063.029.094.01.027.021.054.035.079.017.032.037.062.061.09.016.019.031.038.05.055.002.002.003.003.005.005l8.669 6.031c.168.117.381.18.558.18.176 0 .39-.063.558-.18l8.669-6.03c.002-.002.003-.003.005-.005a.988.988 0 00.05-.055c.024-.027.044-.058.062-.09.013-.025.024-.052.034-.079a.974.974 0 00.03-.094c.002-.01.003-.02.004-.03.001-.008.003-.017.003-.025v-9.138c0-.004-.002-.006-.002-.01zm-2.159.53-3.918 2.727-3.065-2.135V3.065l6.983 4.898zm-9.059-4.898v5.495l-3.065 2.135-3.918-2.727 6.983-4.903zm-8.013 6.142 3.681 2.563-3.681 2.564V9.207zm1.03 3.578 3.918-2.729 3.065 2.137v4.272l-6.983-4.885zm8.013 9.278-6.983-4.857 3.679-2.564 3.304 2.304v5.117zm1.001 0v-5.117l3.304-2.304 3.678 2.564-6.982 4.857zm7.012-6.096-3.681-2.564 3.681-2.563v5.127z"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@shroomtop420" target="_blank" rel="noopener" title="YouTube">
-          <!-- YouTube SVG -->
-          <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" class="inline-block text-white hover:text-pink-400 transition"><path d="M23.498 6.186a2.967 2.967 0 0 0-2.087-2.093C19.095 3.539 12 3.539 12 3.539s-7.095 0-9.411.554A2.967 2.967 0 0 0 .502 6.186C0 8.502 0 12 0 12s0 3.498.502 5.814a2.967 2.967 0 0 0 2.087 2.093C4.905 20.461 12 20.461 12 20.461s7.095 0 9.411-.554a2.967 2.967 0 0 0 2.087-2.093C24 15.498 24 12 24 12s0-3.498-.502-5.814zM9.545 15.568V8.432l6.545 3.568-6.545 3.568z"/></svg>
-        </a>
-        <a href="https://discord.gg/8YXJhN2jbW" target="_blank" rel="noopener" title="Discord">
-          <!-- Discord SVG -->
-          <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24" class="inline-block text-white hover:text-pink-400 transition"><path d="M20.317 4.369a19.791 19.791 0 0 0-4.885-1.515.07.07 0 0 0-.073.035c-.211.375-.444.864-.608 1.249-1.844-.277-3.68-.277-5.486 0-.165-.397-.406-.874-.617-1.249A.07.07 0 0 0 8.57 2.854a19.736 19.736 0 0 0-4.885 1.515.062.062 0 0 0-.027.023C.533 7.363-.32 10.273.099 13.135a.076.076 0 0 0 .028.055c2.052 1.507 4.036 2.422 5.991 3.029a.07.07 0 0 0 .076-.027c.462-.638.874-1.309 1.226-2.014a.07.07 0 0 0-.038-.095c-.652-.247-1.273-.547-1.87-.892a.07.07 0 0 1-.008-.116c.125-.094.25-.19.372-.291a.07.07 0 0 1 .072-.011c3.927 1.793 8.18 1.793 12.062 0a.07.07 0 0 1 .073.009c.123.101.247.197.372.291a.07.07 0 0 1-.007.116 11.524 11.524 0 0 1-1.871.892.07.07 0 0 0-.037.095c.36.705.772 1.377 1.226 2.014a.07.07 0 0 0 .076.027c1.969-.607 3.954-1.522 6.007-3.03a.075.075 0 0 0 .028-.054c.5-3.223-.838-6.089-3.488-8.743a.061.061 0 0 0-.026-.023zm-12.55 8.431c-1.183 0-2.156-1.085-2.156-2.419 0-1.333.955-2.418 2.156-2.418 1.211 0 2.175 1.095 2.156 2.418 0 1.334-.955 2.419-2.156 2.419zm8.486 0c-1.183 0-2.156-1.085-2.156-2.419 0-1.333.955-2.418 2.156-2.418 1.211 0 2.175 1.095 2.156 2.418 0 1.334-.945 2.419-2.156 2.419z"/></svg>
-        </a>
-      </div>
-      <div class="mt-3 text-base text-purple-100">
-        <div><b>Email:</b> <a href="mailto:onesilentflame@gmail.com" class="underline">onesilentflame@gmail.com</a></div>
-        <div><b>OpenAI GPT Store:</b> <a href="https://shroomtop.github.io/OpenAI-rank/" class="underline" target="_blank" rel="noopener">View all GPTs</a></div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer / Legal - Discreet -->
-  <footer class="w-full mt-8 pb-6 text-center text-xs text-purple-400 bg-transparent" id="legal">
-    <div class="max-w-xl mx-auto flex flex-col items-center gap-3">
-      <button onclick="document.getElementById('legal-modal').showModal()" class="underline text-purple-300 hover:text-pink-400">Privacy Policy &amp; Terms</button>
-      <dialog id="legal-modal" class="rounded-lg p-6 bg-[#1a0a2e] max-w-lg w-full text-left text-purple-100 border border-purple-600 shadow-xl">
-        <h3 class="font-bold text-lg mb-2 text-white">Legal &amp; Compliance</h3>
-        <div class="mb-3">
-          <b>Business Name:</b> Shroomtop420™<br>
-          <b>Business Owner:</b> Alex ("Shroomtop420™")<br>
-          <b>Business Email:</b> onesilentflame@gmail.com<br>
-          <b>Mailing Address:</b>
-          <span id="reveal-address" style="cursor:pointer;text-decoration:underline;color:#f9a8d4;" onclick="document.getElementById('address-real').style.display='inline'">[Click to reveal]</span>
-          <span id="address-real" style="display:none;"> 8426 Greenwood Rd., Baxter, MN 56425</span>
-        </div>
-        <div class="mb-3">
-          <b>Privacy Policy:</b><br>
-          We collect only the information needed to process your payment (handled securely by Stripe). Your email may be used to provide product access and updates. No spam, no reselling of data, ever. All payments and sensitive data are processed by Stripe and are never stored on our servers.
-        </div>
-        <div>
-          <b><b>Terms of Service:</b><br>
-          Subscriptions are billed monthly. Cancel any time via your Stripe receipt or by emailing us. All digital products are delivered online. Support is available via email or Discord. Abuse or misuse of Shroomtop420™ tools will result in termination of access with no refund.
-        </div>
-        <form method="dialog">
-          <button class="mt-5 px-5 py-1 bg-purple-700 rounded-full text-white font-bold">Close</button>
-        </form>
-      </dialog>
-    </div>
-    <div class="mt-2">&copy; 2025 Shroomtop420™ – All rights reserved.</div>
-  </footer>
-  <script>
-    // Ensure modal closes properly if user clicks outside or presses Esc (for mobile-friendliness)
-    const legalModal = document.getElementById('legal-modal');
-    if (legalModal) {
-      legalModal.addEventListener('click', (e) => {
-        if (e.target === legalModal) legalModal.close();
-      });
-    }
-    // Prevent duplicate address reveal on multiple clicks
-    document.getElementById('reveal-address').addEventListener('click', function() {
-      this.style.display = "none";
+  <div class="mt-2">&copy; 2025 Shroomtop420™ – All rights reserved.</div>
+</footer>
+<script>
+  // Ensure modal closes properly if user clicks outside or presses Esc (for mobile-friendliness)
+  const legalModal = document.getElementById('legal-modal');
+  if (legalModal) {
+    legalModal.addEventListener('click', (e) => {
+      if (e.target === legalModal) legalModal.close();
     });
-  </script>
+  }
+  // Prevent duplicate address reveal on multiple clicks
+  document.getElementById('reveal-address').addEventListener('click', function() {
+    this.style.display = "none";
+  });
+</script>
 </body>
 </html>
