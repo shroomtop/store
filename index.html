@@ -1,84 +1,41 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shroomtop420™ – Launch, Monetize, and Automate AI-Powered Products</title>
-  <meta name="description" content="Shroomtop420™ delivers next-gen automation tools, custom GPTs, and digital assets—engineered for creators, startups, and power users.">
-  <meta name="keywords" content="Shroomtop420, AI Automation, GPTs, Monetization, CodePen, Termux, Stripe, Web Apps, OpenAI, Digital Products, SaaS">
-  <meta name="author" content="Alex (Shroomtop420™)">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html,body {height:100%;margin:0;padding:0;scroll-behavior:smooth;}
-    body {
-      font-family:'Montserrat',sans-serif;
-      background: radial-gradient(ellipse 160% 120% at 50% 0%, #381d6e 0%, #1a0a2e 70%);
-      color: #e0d8f0;
-      min-height: 100vh;
-      overflow-x:hidden;
-    }
-    .main-container {max-width: 1024px;margin: 0 auto;padding: 24px 4vw 42px 4vw;position: relative;z-index: 1;}
-    .glass-card {
-      background: rgba(44,18,56,0.89);border-radius: 1.5rem;padding: 1.5rem 1.2rem;
-      margin-bottom: 2rem;box-shadow: 0 8px 32px #1a0a2e50;border: 1.5px solid rgba(255,255,255,0.09);
-    }
-    .featured-icon {width: 38px; height: 38px; display:inline-block;vertical-align:middle; margin-right:0.7rem;}
-    .project-grid {display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));}
-    .project-card {transition:transform 0.14s;cursor:pointer;}
-    .project-card:hover {transform:scale(1.028);}
-    @media (max-width: 700px) {
-      .main-container { padding: 10px 1vw 20vw 1vw; }
-      .glass-card { padding: 1rem 0.7rem; }
-    }
-  </style>
-  <!-- 🔥 Shroomtop420™ SEO + Rich-Result Booster -->
-<meta name="description"
-      content="Alex Moberg (Shroomtop420™) — antifragile AI & automation engineer. Build, launch, and monetize 170+ GPT tools & zero-dep web apps.">
-<!-- Open Graph / Twitter Cards -->
-<meta property="og:title" content="Shroomtop420™ — AI, Automation & Monetization Lab">
-<meta property="og:description" content="Elite GPT builder & code-product architect. Unlock premium AI tools.">
-<meta property="og:url" content="https://www.shroomtop420.com/">
-<meta property="og:image" content="https://www.shroomtop420.com/assets/avatar.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@Shroomtop420">
-<!-- Rich-Result Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Alex Moberg",
-  "url": "https://www.shroomtop420.com/",
-  "image": "https://www.shroomtop420.com/assets/avatar.jpg",
-  "jobTitle": "Meta-System Architect & Prompt Engineer",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Shroomtop420™",
-    "url": "https://www.shroomtop420.com/"
-  },
-  "sameAs": [
-    "https://github.com/shroomtop",
-    "https://shroomtop.github.io/Alex-Moberg/"
-  ]
-}
-</script>
+-  <!-- ⚠️ first description & keywords –- remove -->
+-  <meta name="description" content="Shroomtop420™ delivers next-gen automation tools, custom GPTs …">
+-  <meta name="keywords"  … >
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Shroomtop420™",
-  "url": "https://www.shroomtop420.com/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://www.shroomtop420.com/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
-<!-- Preload critical assets to avoid resource-miss warnings -->
-<link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/css/tailwind.min.css" as="style">
++  <!-- ✅ single, authoritative description -->
++  <meta name="description"
++        content="Alex Moberg (Shroomtop420™) — antifragile AI & automation engineer. Build, launch, and monetize 170+ GPT tools & zero-dep web apps.">
+
++  <!-- canonical URL -->
++  <link rel="canonical" href="https://www.shroomtop420.com/">
+
+   <!-- fonts + Tailwind (still CDN) -->
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+-  <script src="https://cdn.tailwindcss.com"></script>
++  <script src="https://cdn.tailwindcss.com" crossorigin="anonymous"></script>
+
+   <!-- Open Graph / Twitter -->
++  <meta property="og:type"         content="website">
++  <meta property="og:site_name"    content="Shroomtop420™">
+   <meta property="og:title"        content="Shroomtop420™ — AI, Automation & Monetization Lab">
+   <meta property="og:description"  content="Elite GPT builder & code-product architect. Unlock premium AI tools.">
+   <meta property="og:url"          content="https://www.shroomtop420.com/">
+   <meta property="og:image"        content="https://www.shroomtop420.com/assets/avatar.jpg">
+   <meta property="og:image:width"  content="1200">
+   <meta property="og:image:height" content="630">
+   <meta name="twitter:card"        content="summary_large_image">
+   <meta name="twitter:site"        content="@Shroomtop420">
+
+   <!-- JSON-LD blocks (keep exactly as you pasted) -->
+   … Person schema …
+   … WebSite schema …
+
+-  <!-- Preload critical assets (font OK, Tailwind path 404s) -->
+-  <link rel="preload" href="/css/tailwind.min.css" … >
++  <!-- Optional: delete this preload or point to a self-hosted purged Tailwind build -->
 </head>
 <body>
 <nav class="w-full py-4 flex flex-wrap justify-center gap-2 bg-transparent z-10 sticky top-0">
